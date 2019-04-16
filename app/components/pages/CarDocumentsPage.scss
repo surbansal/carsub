@@ -1,0 +1,36 @@
+@import '../../assets/scss/variables';
+
+.breadcrumb {
+  white-space: nowrap;
+  @media(max-width: $mobileBreakpoint) {
+    width: 85% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 0 !important;
+  }
+}
+.car-docs {
+  @media(max-width: $mobileBreakpoint) {
+    width: 85% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    p {
+        line-height: 26px;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    padding: 36px 130px 16px 130px;
+  }
+}
+.doc-links {
+    display: flex;
+    flex-direction: column;
+    width: 85% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    a {
+        text-decoration: none !important;
+        margin: 20px 0px;
+        font-size: 17px;
+    }
+}  

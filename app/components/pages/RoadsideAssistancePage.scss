@@ -1,0 +1,35 @@
+@import '../../assets/scss/variables';
+
+.breadcrumb {
+  white-space: nowrap;
+  @media(max-width: $mobileBreakpoint) {
+    width: 85% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 0 !important;
+  }
+}
+.roadside-assist {
+  @media(max-width: $mobileBreakpoint) {
+    width: 85% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  @media screen and (min-width: 1024px) {
+    padding: 36px 130px 16px 130px;
+  }
+  .rsa-contact {
+    a {
+      color: $lightblue !important;
+    }
+  }
+}
+.button {
+  @media(max-width: $mobileBreakpoint) {
+    width: 85% !important;
+    text-align: center;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 100px;
+  }
+}

@@ -1,0 +1,82 @@
+@import "../assets/scss/variables";
+
+.filter-slider-wrapper {
+  width: 100%;
+  margin-bottom: 13px;
+  .price-per-month {
+    width: 93px;
+    height: 16px;
+    font-size: 12px;
+    margin-top: 4px;
+    margin-bottom: 2px;
+  }
+  .input-range__slider {
+    appearance: none;
+    background: $darkskyblue;
+    border: 1px solid $darkskyblue;
+    border-radius: 100%;
+    cursor: pointer;
+    display: block;
+    height: 1rem;
+    margin-left: -0.5rem;
+    margin-top: -0.65rem;
+    outline: none;
+    position: absolute;
+    top: 50%;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    width: 1rem;
+  }
+  .input-range__slider:active {
+    transform: scale(1.3);
+  }
+  .input-range__slider:focus {
+    box-shadow: 0 0 0 5px rgba(63, 81, 181, 0.2);
+  }
+  .input-range--disabled .input-range__slider {
+    background: $white-five;
+    border: 1px solid $white-five;
+    box-shadow: none;
+    transform: none;
+  }
+
+  .input-range__slider-container {
+    transition: none;
+  }
+
+  .input-range__label {
+    display:none;
+  }
+  .input-range__track {
+    background: $white-four;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    display: block;
+    height: 3px;
+    position: relative;
+    transition: none;
+  }
+  .input-range--disabled .input-range__track {
+    background: $white-four;
+  }
+
+  .input-range__track--background {
+    left: 0;
+    margin-top: -0.15rem;
+    position: absolute;
+    right: 0;
+    top: 50%;
+  }
+
+  .input-range__track--active {
+    background: $darkskyblue;
+  }
+
+  .input-range {
+    height: 1rem;
+    position: relative;
+    width: 100%;
+  }
+}
+
+
+

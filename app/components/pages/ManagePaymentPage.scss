@@ -1,0 +1,65 @@
+@import '../../assets/scss/variables';
+.cards-container {
+  .cards-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 450px;
+    margin-bottom: 35px;
+    @media screen and (min-width: 0px) and (max-width: 767px) {
+      margin: 0 25px;
+      margin-bottom: 35px;
+    }
+    .card-heading {
+      display: flex;
+      flex-flow: row;
+      justify-content: space-between;
+      .change-link {
+        color: $darkskyblue !important;
+      }
+      h3 {
+        color: $textgrey;
+      }
+    }
+    h2 {
+      font-weight: normal;
+      font-size: 29px;
+      margin-bottom: 15px;
+    }
+    .payment-card {
+      padding: 16px;
+      margin-bottom: 25px;
+      display: flex;
+      flex-flow: row;
+      border: 2px solid $white-three;
+      border-radius: 5px;
+      .card-img {
+        width: 50px;
+        height: 30px;
+      }
+      .payment-info {
+        margin-top: 0px;
+        margin-left: 16px;
+        .card-detail {
+          font-size: 14px;
+          margin: 0px;
+          color: $textgrey;
+        }
+        .card-expiry {
+          font-size: 12px;
+          margin: 2px 0px 0px 0px;
+          color: $lightgrey;
+        }
+      }
+      &.selected {
+        border: 2px solid $blue;
+      }
+    }
+    .saved-cards {
+      background: $purewhite;
+      margin-bottom: 15px;
+    }
+    .success-message {
+      color: #5FBA7D;
+    }
+  }
+}

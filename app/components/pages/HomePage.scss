@@ -1,0 +1,139 @@
+@import '../../assets/scss/variables';
+
+.video-holder {
+  width: 72%;
+  margin-bottom: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1440px;
+  @media screen and (max-width: $mobileBreakpoint) {
+    width: 80%;
+  }
+
+  h2 {
+    display: none;
+    @media screen and (max-width: $mobileBreakpoint) {
+      width: 100%;
+      text-align: center;
+      display: flex;
+    }
+  }
+}
+.line-spacing {
+  width: 41.5% !important;
+  margin-top: -0.3%;
+}
+
+.call-to-action {
+  text-align: center;
+  margin: 100px auto;
+  max-width: 1440px;
+  @media screen and (max-width: $mobileBreakpoint) {
+    text-align: left;
+    margin: 30px auto;
+    width: 80%;
+  }
+  span {
+    width: 70%;
+    margin: 0 auto;
+    display: block;
+    max-width: 700px;
+    line-height: 1.76;
+  }
+  button {
+    margin-top: 50px;
+    width: 200px;
+  }
+  .find-car-panel{
+    @media screen and (max-width: $mobileBreakpoint) {
+      display: block;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: $purewhite;
+      border-top: 1px solid $lightestgrey-one;
+      border-bottom: 1px solid $lightestgrey-one;
+      text-align: center;
+      z-index: 100;
+      button.csa-button {
+        margin: 13px 0;
+        width: 80%;
+      }
+    }
+  }
+}
+.included-subscription {
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  @media screen and (max-width: $mobileBreakpoint) {
+    flex-direction: row;
+  }
+
+  .title {
+    width: 100%;
+    text-align: center;
+  }
+  .included-item {
+    text-align: center;
+    width: 17%;
+    @media screen and (max-width: $mobileBreakpoint) {
+      width:50%;
+      margin-bottom:40px;
+    }
+    position: relative;
+    display: inline-block;
+    h2 {
+      font-size: 18px;
+    }
+  }
+}
+
+.image-holder.home {
+  height: 70%;
+  max-height: 900px;
+  min-height: 480px;
+  overflow: hidden;
+  position: relative;
+  margin-left: -90px;
+  width: calc(100% + 180px);
+  @media screen and (max-width: $mobileBreakpoint) {
+    min-height: 338px;
+  }
+  .hero-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    @media screen and (max-width: $mobileBreakpoint) {
+      height: 74%;
+    }
+    img {
+      position: absolute;
+      bottom: 0px;
+      max-width: none;
+    }
+  }
+  .hero-line-spacing {
+    margin: -4px 0px 0px 0px;
+    position: absolute;
+    bottom: 0px;
+    height: 0px;
+  }
+}
+
+.content.home-page {
+  margin-top: 0px;
+  max-width: none !important;
+  @media screen and (max-width: $mobileBreakpoint) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  a {
+    display: inline-block;
+  }
+}
+

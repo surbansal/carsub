@@ -1,0 +1,21 @@
+{
+  "short_name": "AAA Car Sub",
+  "name": "AAA Car Subscription",
+  "icons": [
+    {
+      "src": "images/icons-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/icons-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/my-account?source=pwa",
+  "background_color": "#D0021B",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#D0021B"
+}

@@ -1,0 +1,154 @@
+@import "../../assets/scss/variables";
+
+.vehicle-detail-subscribe {
+
+  @media(max-width: $mobileBreakpoint) {
+    border: none;
+  }
+
+  .subscribe-steps {
+    .subscribe-step {
+
+      @media(max-width: $mobileBreakpoint) {
+        padding-top: 0px;
+      }
+
+      .subscribe-step-details {
+
+        .row {
+          @media(max-width: $mobileBreakpoint) {
+            display: flex;
+          }
+        }
+        @media(max-width: $mobileBreakpoint) {
+          margin: 0 18px 40px 18px;
+        }
+        .submit-options {
+          margin: 42px 0 20px;
+
+          button {
+            width: 100%;
+            padding: 12px 50px;
+            font-weight: bold;
+          }
+        }
+        .other-subscription {
+          width: 45px;
+          margin-right: 30px;
+          padding: 16px;
+
+          &.hidden {
+            display: none;
+          }
+
+          &.show {
+            display: block;
+          }
+        }
+        .subscribe-term-inline {
+          width: 100%;
+          position: relative;
+          margin-top: 4px;
+
+          @media(max-width: $mobileBreakpoint) {
+            margin-top: 8px;
+          }
+
+          .subscribe-term-detail-1 {
+            width: calc(100% - 212px);
+
+            input {
+              width: 80px;
+              @media(max-width: $mobileBreakpoint) {
+                font-size: 14px;
+              }
+
+            }
+          }
+
+          .subscribe-term-detail-2 {
+            position:absolute;
+            float: right;
+            left: 75px;
+            top: 0px;
+
+            h3 {
+              color: $twilight-blue;
+            }
+          }
+        }
+        @media(max-width: $mobileBreakpoint) {
+          .subscribe-length-duration{
+              display: none;
+          }
+          .subscribe-length-duration-mobile {
+            display: block;
+            .slick-slider {
+              margin: 0px -75px;
+              margin-left: calc(-7.5vw - 18px);
+              margin-right: calc(-7.5vw - 18px);
+              width: 100vw;
+              .slick-track {
+                margin-left: 75px;
+                margin-right: 75px;
+                margin-left: calc(7.5vw + 18px);
+                margin-right: calc(7.5vw + 18px);
+              }
+            }
+          }
+          .subscribe-length-duration-slider{
+              width: 95% !important;
+              padding: 0;
+              text-align: center;
+              font-size: 15px;
+              color: $brownish-grey;
+              background-color: $white-two;
+              border: 1px solid $lightestgrey-one;
+              &.selected{
+                border: 2px solid $twilight-blue;
+                color: $black;
+                background-color: $purewhite;
+              }
+          }
+          .subscribe-mileage-info{
+              display: none;
+          }
+          .subscribe-mileage-info-mobile1{
+              display: block;
+              margin: 0 -100px;
+          }
+          .subscribe-mileage-info-slider{
+              width: 95% !important;
+              text-align: center;
+              font-size: 14px;
+              padding: 0;
+              color: $brownish-grey;
+              background-color: $white-two;
+              border: 1px solid $lightestgrey-one;
+              &.selected{
+                border: 2px solid $twilight-blue;
+                border: 2px solid $twilight-blue;
+                color: $black;
+                background-color: $purewhite;
+              }
+          }
+          .fine-print {
+            p {
+              margin-bottom:0px;
+            }
+          }
+        }
+      }
+      hr {
+        color: $lightgrey;
+        margin: 15px 0;
+      }
+      .subscribe-step-heading{
+        @media(max-width: $mobileBreakpoint) {
+          display: block;
+          padding: 20px 0 20px 18px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@import '../../assets/scss/variables';
+
+.add-home-instructions {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: $purewhite;
+  .header-info {
+    border-bottom: 1px solid $white;
+  }
+  .action-field {
+    button.action {
+      margin-left: 10px;
+    }
+  }
+}

@@ -1,0 +1,283 @@
+@import "../../assets/scss/variables";
+
+.search-bar {
+  width: 100%;
+  height: 35px;
+  margin-bottom: 30px;
+  &.vehicle-unavailable {
+    margin-bottom: 27px;
+    @media screen and (max-width: $mobileBreakpoint) {
+      margin-bottom: 25px;
+    }
+  }
+  @media screen and (max-width: $mobileBreakpoint) {
+    margin-bottom: 24px;
+    width: 100vw;
+    margin-left: -50vw;
+    position: relative;
+    left: 50%;
+  }
+  .search-area {
+    font-size: 15px;
+    color: $brownish-grey;
+    position: relative;
+    display: inline-block;
+    float: right;
+    height: 100%;
+    @media screen and (max-width: $mobileBreakpoint) {
+      width: 100%;
+      font-size: 12px;
+    }
+    .area-details {
+      float: left;
+      margin-right: 81px;
+      margin-top: 26px;
+      :hover {
+        cursor:pointer;
+        color:$darkish-blue;
+      }
+      @media screen and (max-width: $mobileBreakpoint) {
+        margin: 0px 0px 20px 39px;
+      }
+      .area-name {
+        font-weight: bold;
+        color: $darkskyblue;
+        @media screen and (max-width: $mobileBreakpoint) {
+          color: $blue-one !important;
+        }
+      }
+      .down-chevron {
+        margin: 2px 8px 0px 8px;
+        .arrow {
+          -ms-transform: rotate(90deg);
+          -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+          @media screen and (max-width: $mobileBreakpoint) {
+            height: 10px;
+          }
+        }
+      }
+    }
+    .number-of-results {
+      float: right;
+      @media screen and (max-width: $mobileBreakpoint) {
+        margin-right: 38px;
+        font-weight: bold;
+      }
+    }
+    .area-dropdown-container {
+      position: absolute;
+      z-index: 4;
+      top: 51px;
+      left: 121px;
+      width: 55%;
+      background: $purewhite;
+      box-shadow: 1px 1px 1px $black;
+      cursor:pointer;
+      @media screen and (max-width: $mobileBreakpoint) {
+        top: 25px;
+        left: 128px;
+        width: 50%;
+      }
+      .area-options {
+        font-size: 16px;
+        padding: 11px 22px;
+        color: $brownish-grey;
+        span:hover {
+          color: $darkish-blue;
+        }
+      }
+    }
+  }
+  &.browse-vehicle-mobile {
+    @media screen and (max-width: $mobileBreakpoint) {
+        width: 92vw;
+        .area-details {
+          margin: 0px 0px 20px 20px;
+        }  
+        .number-of-results {
+          margin-right: auto;
+        }
+      }
+  }
+}
+.filter-modal {
+  padding: 0px 40px 0px 40px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  .filter-header-wrapper {
+    display: flex;
+    flex-direction: column;
+    .filter-header {
+      margin-top: 30px;
+      margin-bottom: 22px;
+      .close-filters {
+        float: left;
+        img {
+          width: 12px;
+          height: 12px;
+        }
+        .filtering-vehicles {
+          width: 112px;
+          height: 20px;
+          font-family: Smart;
+          font-size: 15px;
+          font-weight: bold;
+          line-height: normal;
+          color: $darkish-blue;
+          margin-left: 8px;
+        }
+      }
+    }
+    .search-bar {
+      margin-bottom: 9px;
+    }
+  }
+  .apply-filter-btn {
+    margin: 40px auto 50px auto;
+    text-align: center;
+    button {
+      width: 100%;
+    }
+  }
+}
+.reset-filters {
+  margin-right: 20px;
+  margin-top: 3px;
+  float: right;
+  width: 92px;
+  height: 16px;
+  font-size: 15px;
+  font-weight: normal;
+  line-height: normal;
+  text-align: center;
+  color: $darkskyblue;
+  cursor: pointer;
+  @media(max-width: $mobileBreakpoint) {
+    width: auto;
+    margin-right: 0px;
+    font-size: 12px;
+  }
+  &.browse-reset {
+    @media(max-width: $mobileBreakpoint) {
+      margin-top: 0px;
+    }
+  }
+}
+.vehicles-filter-wrapper {
+  display: flex;
+  margin-bottom: 75px;
+  @media screen and (max-width: $mobileBreakpoint) {
+    display: block;
+  }
+  .mobile-gradient-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  .line-gradient {
+    bottom: -74px;
+    width: 100%;
+    margin-bottom: 12px;
+    @media screen and (max-width: $mobileBreakpoint) {
+      margin-bottom: -16px;
+      width: 100%;
+    }
+  }
+  .desktop-filters {
+    margin-top: 40px;
+    width: 25%;
+    margin-left: 3px;
+    position: relative;
+    @media screen and (min-width: 1301px){
+      width: 28%;
+    }
+    @media screen and (max-width: 1300px){
+      width: 42%;
+    }
+    .filter-components {
+      padding: 28px 28px 28px 28px;
+      margin-top: -16px;
+      margin-bottom: 50px;
+      border: solid $white-two 2px;
+      .number-of-results  {
+        margin-bottom: 23px;
+        font-weight: bold;
+        color: $darkish-blue;
+        @media screen and (max-width: $mobileBreakpoint) {
+          margin-left: 20px;
+          margin-bottom: 10px;
+        }
+      }
+      .apply-filter-btn {
+        margin: 40px auto 50px auto;
+        text-align: center;
+        button {
+          width: 85%;
+        }
+      }
+    }
+  }
+  .filter-icon-wrapper {
+    width: 85%;
+    position: absolute;
+    top: -37px;
+    left: 34px;
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width: $mobileBreakpoint) {
+      width: 92% !important;
+      top: -32px;
+      left: 0px;
+    }
+    img {
+      height: 15px;
+      width: 20px;
+    }
+    .filter-icon {
+      margin-left: 0px;
+      @media screen and (max-width: $mobileBreakpoint) {
+        margin-left: 20px;
+      }
+    }
+    .filter-label {
+      width: 112px;
+      height: 20px;
+      font-family: Smart;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: normal;
+      color: $blue-one;
+      margin-left:8px;
+      @media screen and (max-width: $mobileBreakpoint) {
+        font-size: 15px;
+        font-weight: bold;
+      }
+    }
+    @media screen and (max-width: $mobileBreakpoint) {
+      width: 100%;
+      img {
+        height: 15px;
+        width: 20px;
+      }
+      .filter-icon {
+        margin-left: 20px;
+      }
+      .filter-label {
+        width: 112px;
+        height: 20px;
+        font-family: Smart;
+        font-size: 15px;
+        font-weight: bold;
+        line-height: normal;
+        color: $blue-one;
+        margin-left:8px;
+      }
+    }
+  }
+  .bottom-align {
+    bottom: 22px;
+  }
+}
+
+

@@ -1,0 +1,60 @@
+@import "../../assets/scss/variables";
+
+$tint: darken(#F9F9F9, 5);
+
+.time-frame {
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  @media screen and (max-width: $mobileBreakpoint) {
+    width: 98px;
+    margin-right: 10px;
+  }
+}
+
+@media(min-width: 440px){
+  width: 50%;
+}
+
+@media(min-width: 560px) {
+  width: 33.3%;
+}
+
+.time-frame-wrapper {
+  display: block;
+  cursor: pointer;
+  background: $tint;
+  color: #A4A4A4;
+  font-size: 18px;
+  margin: .5rem 0px;
+  padding: .5rem;
+  border: 2px solid #E4E5E6;
+  @media screen and (max-width: $mobileBreakpoint) {
+    font-size: 15px;
+    text-align: center;
+    padding: 5px 5px  5px 5px;
+    display: flex;
+  }
+
+  &:active, &.selected {
+    background: lighten($tint, 12) !important;
+    color: $twilight-blue;
+    border: 2px solid #2D509B;
+  }
+
+  &:hover {
+    background: lighten($tint, 5);
+  }
+  @media screen and (max-width: $mobileBreakpoint) {
+    input { 
+      padding: 10px 0; 
+    }
+  }
+}
+
+.time-frame-radio {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  opacity: 0;
+}

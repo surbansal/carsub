@@ -1,0 +1,94 @@
+@import "../../assets/scss/variables";
+
+.how-it-works {
+  width: 100vw;
+  margin-left: -50vw;
+  position: relative;
+  left: 50%;
+}
+
+.how-it-work-container {
+  background-color: $white-two;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 48px;
+  h2 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 34px;
+    display: table;
+    font-size: 27px;
+  }
+  canvas {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 5%;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .how-it-work {
+    padding-top: 7px;
+    text-align: center;
+    @media(max-width: $mobileBreakpoint) {
+      padding-bottom: 60px;
+    }
+    .info-card {
+      z-index: 4;
+      position: relative;
+      text-align: center;
+      padding: 16px;
+      display: table;
+      margin-right: auto;
+      margin-left: auto;
+      @media(max-width: $mobileBreakpoint) {
+        width: 100%;
+        margin-bottom: -70px;
+      }
+      .info-sec {
+        width: 296px;
+        height: 310px;
+        @media(max-width: $mobileBreakpoint) {
+          width: 80%;
+          margin-right: auto;
+          margin-left: auto;
+          height: initial;
+        }
+        background-color: $purewhite;
+        .info-data {
+          padding: 18px;
+          h4 {
+            margin: 14px;
+          }
+          p {
+            @media(max-width: $mobileBreakpoint) {
+              max-width: 80%;
+              margin-left: auto;
+              margin-right: auto;
+            }
+          }
+        }
+      }
+      .vertical-road {
+        margin-top: -4px;
+        margin-bottom: -4px;
+      }
+    }
+
+    .line-width {
+      opacity: 0;
+      width: 296px;
+      @media(max-width: $mobileBreakpoint) {
+        width: 80%;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      transition: 0.3s all ease-in-out;
+      &.show {
+        opacity: 1;
+      }
+    }
+  }
+}

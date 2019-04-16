@@ -1,0 +1,71 @@
+@import '../../assets/scss/variables';
+
+.about-us-page {
+    .header-info {
+      h1 {
+        margin-top: 0px;
+        color: $black;
+        width: 100%;
+        text-align: center;
+      }
+    }
+    p {
+      @media screen and (max-width: $mobileBreakpoint) {
+        line-height: 26px;
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+  .learn-more {
+    @media screen and (max-width: $mobileBreakpoint) {
+      width: 100%;
+      margin-right: 0;
+    }
+    h2 {
+      @media screen and (max-width: $mobileBreakpoint) {
+        text-align: center;
+      }
+    }
+  }
+
+    .about-us {
+      background-color: $white-two;
+      padding: 100px;
+      text-align: center;
+      p, .action-field {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      p {
+        font-size: 20px;
+        color: $pureblack;
+        margin-bottom: 30px;
+      }
+      .action-field {
+        position: relative;
+        button {
+          width: 160px;
+          position: absolute;
+          right: 0px;
+          font-weight: bold;
+          height: 100%;
+        }
+      }
+    }
+
+    .line {
+      margin-top: 78px;
+      @media screen and (max-width: $mobileBreakpoint) {
+        margin-top: 30px;
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    .image{
+        width:100%;
+    }
+  }

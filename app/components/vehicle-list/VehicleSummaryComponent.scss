@@ -1,0 +1,172 @@
+@import "../../assets/scss/variables";
+
+$hover-transition: all 0.1s ease-in-out;
+
+.gradient-backdrop {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(to right, #d74539, $twilight-blue);
+  background-origin: border-box;
+  border: solid $white-two 4px;
+  @media(max-width: $mobileBreakpoint) {
+    background: none;
+  }
+  transition: $hover-transition;
+  .vehicle-summary {
+    cursor:pointer;
+    position: relative;
+    background-color: $white-two;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 19px 40px 50px 31px;
+    @media(max-width: $mobileBreakpoint) {
+      padding: 25px 40px;
+    }
+    .make-and-model, .vehicle-details, .price-and-action {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .make-and-model {
+      h1.vehicle-model {
+        font-size: 36px;
+        font-weight: bold;
+        letter-spacing: normal;
+        line-height: normal;
+        color: $black;
+        margin: 0px;
+        transition: $hover-transition;
+        @media(max-width: $mobileBreakpoint) {
+          font-size: 25px;
+        }
+      }
+      h2.vehicle-make {
+        font-size: 20px;
+        color: $pureblack;
+        margin-top: 0px;
+        @media(max-width: $mobileBreakpoint) {
+          margin-top: 5px;
+          font-size: 17px;
+        }
+      }
+    }
+    .vehicle-details {
+      display: flex;
+      margin-top: 20px;
+      .preview-image {
+        flex: 0 0 45%;
+        padding-top: 30px;
+        margin-left: -9px;
+        @media(max-width: $mobileBreakpoint) {
+          flex: 0 0 60%;
+          margin-left: -25px;
+          padding-top: 0px;
+        }
+        img {
+          width: 171.4px;
+          @media(max-width: $mobileBreakpoint) {
+            width: 100%;
+          }
+        }
+      }
+      .features {
+        flex: 1;
+        min-height: 205px;
+        line-height: 1.5;
+        color: $pureblack;
+        letter-spacing: -0.4px;
+        font-size: 16px;
+        margin-left: 10px;
+        @media(max-width: $mobileBreakpoint) {
+          margin-top: -35px;
+          font-size: 14px;
+          line-height: 1.8;
+          letter-spacing: normal;
+        }
+      }
+      @media(max-width: $mobileBreakpoint) {
+        margin-top: 0px;
+      }
+    }
+    .price-and-action {
+      display: flex;
+      .price-breakdown {
+        flex: 0.4;
+        color: $twilight-blue;
+        font-size: 18px;
+        line-height: 18px;
+        transition: $hover-transition;
+        margin-right: 32px;
+        padding-top: 9px;
+        .price {
+          font-size: 24px;
+          font-weight: bold;
+        }
+        .fine-print {
+          font-size: 12px;
+          color: $lightgrey;
+        }
+        @media(max-width: $mobileBreakpoint) {
+          flex: 0 0 60%;
+          margin-right: 0px;
+          padding-top: 0px;
+        }
+      }
+      .action {
+        flex: 0.6;
+        position: relative;
+        button {
+          transition: $hover-transition;
+          width: 100%;
+          font-size: 18px;
+          &:hover {
+            background: $scarlet;
+            border: 2px solid $scarlet;
+          }
+          @media(max-width: $mobileBreakpoint) {
+            width: 100%;
+            padding: 7px 5px;
+            font-size: 19px;
+          }
+        }
+        @media(max-width: $mobileBreakpoint) {
+          flex: 1;
+          margin-left: -25px;
+        }
+      }
+      @media(max-width: $mobileBreakpoint) {
+        margin-top: 25px;
+      }
+    }
+
+    &:hover {
+      @media(min-width: $mobileBreakpoint+1px) {
+        h1.vehicle-model {
+          color: $scarlet;
+          @media(max-width: $mobileBreakpoint) {
+            color: $black;
+          }
+        }
+        .price-breakdown {
+          color: $scarlet;
+          @media(max-width: $mobileBreakpoint) {
+            color: $black;
+          }
+        }
+        button {
+          background: $scarlet;
+          border: 2px solid $scarlet;
+          color: $purewhite;
+        }
+      }
+    }
+  }
+  &:hover {
+    @media(min-width: $mobileBreakpoint+1px){
+      border: solid transparent 4px;
+    }
+  }
+  @media(max-width: $mobileBreakpoint) {
+    border: none;
+  }
+}

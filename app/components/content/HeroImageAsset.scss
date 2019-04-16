@@ -1,0 +1,108 @@
+@import '../../assets/scss/variables';
+
+.hero-container {
+    position: relative;
+  .crop {
+    img {
+      @media screen and (max-width: $mobileBreakpoint) {
+        position: relative;
+        height: 250px !important;
+      }
+    }
+  }
+}
+.hero-container-mobile {
+    position: relative;
+  .crop {
+    img {
+      @media screen and (max-width: $mobileBreakpoint) {
+        position: relative;
+        height: auto !important;
+      }
+    }
+}
+}
+.hero-line-spacing {
+    width: 100% !important;
+    margin-bottom: -7px;
+    z-index:1;
+    position: relative;
+  }
+.top-left {
+    position: absolute;
+    font-size: 3vw;
+    max-width: 20%;
+    font-weight: bold;
+    top: 20%;
+    left: 12%;
+    color: $purewhite;
+}
+
+.hide{
+    display: none;
+  }
+.subscribe-text {
+  text-align: center;
+  .learn-more {
+    @media screen and (max-width: $mobileBreakpoint) {
+      text-decoration: unset;
+      margin-bottom: 30px;
+    }
+  }
+}
+.image-holder {
+    position: relative;
+    margin-bottom: 4%;
+  @media screen and (max-width: $mobileBreakpoint) {
+    margin-bottom: 0;
+  }
+    .subscribe-and-drive {
+        width: 400px;
+        height: 330px;
+        background-color: $purewhite;
+        opacity:0.8;
+        position: absolute;
+        top: 17%;
+        left: 12%;
+        padding-left: 4%;
+        padding-top: 1%;
+      @media screen and (max-width: $mobileBreakpoint) {
+        text-align: center !important;
+      }
+        h1 {
+            max-width: 334px;
+            font-size: 48px;
+            line-height: 1.04;
+            letter-spacing: -0.4px;
+            color: #252525;
+            margin-bottom: 0%;
+          @media screen and (max-width: $mobileBreakpoint) {
+            margin-top: 0%;
+          }
+        }
+        p {
+            max-width: 334px;
+            font-size: 26px;
+            line-height: 1.38;
+            letter-spacing: normal;
+            color: #252525;
+            margin-top: 7px;
+        }
+
+        button {
+            width: 60%;
+            padding: 12px 50px;
+            font-weight: bold;
+        }
+    }
+}
+.description-mobile {
+  @media screen and (max-width: $mobileBreakpoint) {
+    margin-left: auto;
+    margin-right: auto;
+    width: 84%;
+    @media screen and(min-width: 400px){
+      width: 78%;
+    }
+  }
+}

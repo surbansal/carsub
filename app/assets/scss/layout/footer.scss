@@ -1,0 +1,131 @@
+@import "../variables";
+
+.csa-footer {
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0px;
+  background: black;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  height: $footer-height;
+  @media screen and (max-width: $mobileBreakpoint) {
+    height: $footer-height-mobile;
+    display: flex;
+    flex-flow: column nowrap;
+    flex-direction: column-reverse;
+    &.change-footer{
+      position: relative;
+      height: auto;
+      padding-bottom: 50px;
+      &.home-page {
+        padding-bottom: 20px;
+      }
+    }
+  }
+  a {
+    text-align: left;
+  }
+  .logo-area {
+    width: 25%;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    @media screen and (max-width: $mobileBreakpoint) {
+      margin-top: 0px;
+      width: 100%;
+      margin-bottom: 0px;
+      text-align: center;
+    }
+    img {
+      @media screen and (max-width: $mobileBreakpoint) {
+        margin-top: 20px;
+        width: 30%;
+        height: 25%;
+      }
+    }
+  }
+  .link-area {
+    width: 45%;
+    margin-top: 20px;
+    margin-bottom: 35px;
+    margin-right: 25%;
+    @media screen and (max-width: $mobileBreakpoint) {
+      margin-bottom: 0px;
+      margin-top: 0px;
+      width: 100%;
+      height: 50%;
+    }
+    .link-content {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-flow: row wrap;
+      flex-flow: row wrap;
+      justify-content: space-around;
+      @media screen and (max-width: $mobileBreakpoint) {
+        margin-left: 5%;
+      }
+    }
+    h3 {
+      font-size: 15px;
+      font-weight: bold;
+      color: $purewhite;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      li {
+        line-height: 1.5;
+        .link {
+          font-size: 14px;
+          font-weight: normal;
+          color: #DADADA;
+          text-decoration: none;
+          &:hover {
+          cursor: pointer;
+          color: $lightblue;
+          }
+        }
+      }
+    }
+    .copyright{
+      margin-top: 8%;
+      @media screen and (max-width: $mobileBreakpoint) {
+        margin-top: 5px;
+      }
+      div{
+        font-size: 12px;
+        text-align: center;
+        color: #9F9F9F;
+      }
+
+      .content-mobile {
+        display: none;
+        @media screen and (max-width: $mobileBreakpoint) {
+          display: block;
+        }
+      }
+
+      .content-desktop {
+        display: block;
+        @media screen and (max-width: $mobileBreakpoint) {
+          display: none;
+        }
+      }
+    }
+  }
+  .app-area {
+    width: 30%;
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
+
+}

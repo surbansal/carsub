@@ -1,0 +1,147 @@
+@import "../../assets/scss/variables";
+
+.lease-purchase {
+    margin-bottom: 4%;
+  @media screen and (max-width: $mobileBreakpoint) {
+    margin-bottom: 0px;
+  }
+    .lease-purchase-details{
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        justify-content: center;
+        .lease-purchase-container {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-flow: row wrap;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 1440px;
+          @media screen and (max-width: $mobileBreakpoint) {
+            flex-flow: wrap-reverse;
+          }
+          .lease-purchase-content {
+            width: 48%;
+            @media screen and (max-width: $mobileBreakpoint) {
+                width:100%;
+                margin-bottom:40px;
+                height: auto;
+                padding-bottom: 20px;
+            }
+            position: relative;
+            height: 530px;
+            display: inline-block;
+            background-color: $white-two;
+            .description {
+                font-size: 18px;
+                font-weight: normal;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.56;
+                letter-spacing: normal;
+                color: $brownish-grey;
+                color: var(--brownish-grey);
+                margin-left: auto;
+                margin-right: auto;
+                display: table;
+                .new-way-description {
+                  text-align: center;
+                  @media screen and (max-width: $mobileBreakpoint) {
+                    display: flex;
+                    flex-direction: column-reverse;
+                  }
+                  .new-way-text {
+                    width: 100%;
+                    font-size: 20px;
+                    font-weight: normal;
+                    font-style: normal;
+                    line-height: 1.65;
+                    letter-spacing: -0.2px;
+                    color: $brownish-grey;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 7%;
+                    p {
+                      margin-left: 0px;
+                      @media screen and (max-width: $mobileBreakpoint) {
+                        width: 85%;
+                        margin-left: auto;
+                        margin-right: auto;
+                        br {
+                          display: none;
+                        }
+                      }
+                   }
+                 }
+                .tick-icon {
+                    margin-top: 4%;
+                    margin-bottom: 4%;
+                 }
+                .how-it-works-button {
+                    margin-top: 14%;
+                    width: 100%;
+                    max-width: 253px;
+                  @media screen and (max-width: $mobileBreakpoint) {
+                    display: none;
+                  }
+                 }
+                }
+                ul {
+                    margin-top: 0px;
+                    list-style: none;
+                    li:before {
+                      content: "+";
+                      padding-right: 4px;
+                    }
+                }
+                p {
+                    margin-bottom: 0px;
+                    margin-left: 55px;
+                    margin-top: 0px;
+                }
+                hr{
+                  width: 216px;
+                  border-width: 1px;
+                  border-style: double;
+                  border-color: $brownish-grey;
+                }
+                h2{
+                  font-size: 18px;
+                  font-weight: bold;
+                  display: block;
+                  text-align: center;
+                  margin-top: 7%;
+                }
+            }
+            .line-strech-new-way {
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              @media screen and (max-width: $mobileBreakpoint) {
+                display: none;
+              }
+            }
+            .line-strech-old-way {
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              display: none;
+              @media screen and (max-width: $mobileBreakpoint) {
+                display: inline;
+              }
+            }
+            h2 {
+                font-weight: 500;
+                display: block;
+                text-align: center;
+                margin-top: 7%;
+            }
+          }
+        }
+    }
+}

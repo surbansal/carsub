@@ -1,0 +1,29 @@
+.custom-field {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  label {
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 1rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    line-height: 1;
+    letter-spacing: -0.3px;
+    transform: translate(0, 1.5px) scale(0.75);
+    transform-origin: top left;
+  }
+  span {
+    display: block;
+    color: currentColor;
+    width: 100%;
+    border: 0;
+    margin: 0;
+    padding: 8px 0 4px;
+    display: block;
+    box-sizing: content-box;
+    background: none;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  }
+}
+
+.ReactModal__Overlay {
+  z-index: 1000;
+}

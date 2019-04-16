@@ -1,0 +1,36 @@
+@import "../../assets/scss/variables";
+
+.vehicle-highlight {
+  display: inline-block;
+  flex-grow: 1;
+  width: 100px;
+  margin: 12px;
+  float:left; 
+  @media screen and (max-width: $mobileBreakpoint) {
+    margin:  6px 24px 6px 0px;
+  }
+
+  .icon {
+    .dot {
+      width:6px;
+      height:6px;
+      border-radius: 50%;
+      display: inline-block;
+      background-color: $brownish-grey;
+    }
+    margin-right:9px;
+    float:left;
+  }
+
+  .vehicle-highlight-text {
+    color:$brownish-grey;
+    width:85px;
+    padding-left:14px;
+    margin-top: 2px;
+    @media screen and (max-width: $mobileBreakpoint) {
+      font-size: 17px;
+      color: $black;
+    }
+  }
+
+}

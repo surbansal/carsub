@@ -1,0 +1,87 @@
+@import "../../assets/scss/variables";
+
+.ra-input {
+  input[type="checkbox"] {
+    position: absolute;
+  }
+  input {
+    border: none!important;
+  }
+}
+
+.ra-delete-button {
+  display: none!important;
+}
+
+.admin-modal {
+  .header {
+    width: 100%;
+    background: $twilight-blue;
+    color: $white;
+    font-size: 18px;
+    padding: 30px;
+    box-sizing: border-box
+  }
+  .body {
+    padding: 30px;
+    max-width: 600px;
+    margin-bottom: 30px;
+    ul {
+      list-style-type: none;
+      b {
+        width: 150px;
+        display: inline-block;
+      }
+    }
+    button {
+      margin: 20px;
+      border-radius: 2px;
+      background: $twilight-blue;
+      color: $purewhite;
+    }
+    .confirmation-dialog-buttons {
+      position: absolute;
+      bottom: 4px;
+      left: 0;
+      display: flex;
+      justify-content: space-between;
+      flex-flow: row;
+      width: 100%;
+      .confirmation-button {
+        width: 150px;
+      }
+    }
+  }
+  min-height: 350px;
+  width: 650px;
+}
+
+.confirmation-dialog-size {
+  min-height: 250px;
+  width: initial;
+}
+.show-page {
+  ::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    height: 0px;
+    background: transparent;  /* optional: just make scrollbar invisible */
+  }
+}
+
+.information-dialog-size {
+ width: 500px;
+  min-height: 80px;
+  .body {
+    .information-dialog-buttons {
+      text-align: center;
+      .ok-btn {
+        width: 150px;
+        height: 50px;
+      }
+    }
+  }
+}
+
+.show-page div[role=tooltip] {
+  z-index: 10;
+}

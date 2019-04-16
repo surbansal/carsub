@@ -1,0 +1,30 @@
+.change-payment-method {
+  input[type="checkbox"] {
+    float: left;
+    margin-right: 15px;
+  }
+  h2 {
+    margin-bottom: 30px !important;
+  }
+  .action-field {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    width: 320px;
+    .primary {
+      width: 450px;
+      @media screen and (min-width: 0px) and (max-width: 767px) {
+        width: 100%;
+      }
+    }
+    a {
+      margin-right: 30px;
+      text-decoration: none;
+    }
+    .is-processing {
+      cursor: default;
+    }
+    @media screen and (min-width: 0px) and (max-width: 767px) {
+      width: 100%;
+    }
+  }
+}

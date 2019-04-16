@@ -1,0 +1,32 @@
+.prices-field {
+    margin-top: 2%;
+    h2 {
+        font-size: 18px;
+    }
+    .editable-section {
+        display:inline;
+        cursor: pointer;
+        input {
+            border: 1px solid black !important;
+        }
+    }
+    .base-price-box {
+        margin-bottom: 1%;
+        width: 528px;
+        .title {
+            width:275px;
+            display: inline-block;
+        }
+    }
+    .mileage-package-box {
+        width: 528px;
+        .title {
+            width:275px;
+            display: inline-block;
+        }
+    }
+    .MuiToolbar-root-69 {
+        margin-left: 12%;
+        margin-top: 3%;
+    }
+}

@@ -1,0 +1,497 @@
+@import "../../assets/scss/variables";
+
+.my-account-background {
+  @media(min-width: $mobileBreakpoint + 1px) {
+    background-color: $white-two;
+  }
+}
+.my-account {
+  margin: 10px 0 0 0;
+  @media(max-width: $mobileBreakpoint) {
+    width: 100%;
+    padding-bottom: 0;
+    padding-left: 0 !important;
+  }
+  h3 {
+    margin: 25px 0 0 0 ;
+    @media(max-width: $mobileBreakpoint) {
+      margin: 30px 0 5px 0;
+      font-size: 26px;
+      font-weight: normal;
+    }
+  }
+} .grey-line {
+  margin-left: 90px;
+  @media(max-width: $mobileBreakpoint) {
+    margin: 0;
+    width: 100% !important;
+    height:4px;
+    border-bottom: 2px solid $lightgray;
+    margin-bottom: 10px;
+  }
+}
+.my-account-page {
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  max-width: 1440px;
+
+  &.fade {
+    @media(max-width: $mobileBreakpoint) {
+      -webkit-filter: blur(5px) grayscale(90%);
+      -moz-filter: blur(5px) grayscale(90%);
+      -o-filter: blur(5px) grayscale(90%);
+      -ms-filter: blur(5px);
+      filter: blur(5px) grayscale(90%);
+    }
+  }
+  .rectangle {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    padding: 20px 90px 15px 90px;
+    @media(max-width: $mobileBreakpoint) {
+      padding: 0 25px 20px 25px;
+    }
+    @media screen and (min-width: 768px) and (max-width: 1024px)  {
+      padding: 0 90px 20px 90px;
+    }
+    .notification-content {
+      padding: 20px 0 10px 0;
+      p {
+        margin-top: 0px;
+        margin-bottom: 5px;
+      }
+      .notice {
+        width: 80%;
+        font-size: 14px;
+      }
+      .notification-close {
+        position: absolute;
+        right: 32px;
+        top: 130px;
+        width: 32px;
+        height: 32px;
+        @media screen and (max-width: 1023px)  {
+          top: 100px;
+        }
+      }
+      .notification-close:before, .notification-close:after {
+        position: absolute;
+        left: 15px;
+        content: ' ';
+        height: 20px;
+        width: 2px;
+        background-color: $black;
+      }
+      .notification-close:before {
+        transform: rotate(45deg);
+      }
+      .notification-close:after {
+        transform: rotate(-45deg);
+      }
+    }
+    .renwal-options-link {
+      text-decoration: underline;
+      font-size: 12px;
+      font-weight: bold;
+      &.notice-text {
+        color: $dark-red;
+      }
+      &.info-text {
+        color: $dark-green;
+      }
+    }
+    &.notice-msg {
+      background-color: rgba($dark-red, 0.15);
+      color: $light-red;
+    }
+    &.info-msg {
+      background-color: rgba($light-green, 0.88);
+      color: $dark-green;
+    }
+  }
+  .my-account-car {
+    max-width: 100%;
+    max-height: 450px;
+    display: block;
+    margin: 0 auto;
+  }
+  .my-account-section {
+    width: 100%;
+    @media screen and (min-width: $mobileBreakpoint + 1px) {
+      background-color: $white-two;
+    }
+    @media(max-width: $mobileBreakpoint) {
+      padding-top: 10px !important;
+    }
+    &:nth-child(even) {
+      background-color: $white-two;
+    }
+    @media screen and (min-width: 1024px) {
+      padding: 0 90px 16px 90px;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+      padding: 0 90px 10px 90px;
+    }
+
+    @media screen and (min-width: 0px) and (max-width: 767px) {
+      padding: 0 25px 30px 25px;
+    }
+    .manage-payment-link{
+      @media(max-width: $mobileBreakpoint) {
+        position: relative;
+        top: 20px;
+        text-decoration: none;
+      }
+    }
+    .view-sub-details-link{
+      @media(max-width: $mobileBreakpoint) {
+        position: relative;
+        top: 20px;
+        text-decoration: none;
+      }
+    }
+    .upcoming-payments-label {
+      @media(max-width: $mobileBreakpoint) {
+        display: flex;
+        flex-flow: row nowrap;
+      }
+      h3{
+        @media(max-width: $mobileBreakpoint) {
+          font-weight: bold;
+        }
+      }
+      .cal-image{
+        @media(max-width: $mobileBreakpoint) {
+          margin-right: 10px;
+          margin-top: 15px;
+          width: 25px;
+          height: 25px;
+        }
+      }
+      .mobile-upcoming-label {
+        @media(max-width: $mobileBreakpoint) {
+         display: flex;
+        }
+      }
+    }
+    &.maintenance-section {
+      background-color: $purewhite;
+      display: none;
+
+      @media(max-width: $mobileBreakpoint) {
+        display: flex;
+        justify-content: space-around;
+        padding: 0 10px 30px 10px;
+      }
+      .maintenance-action-icons {
+        width: 145px;
+        height: 150px;
+        border-radius: 7px;
+        border: solid 2px $black;
+        text-align: center;
+
+        .icon-text {
+          width: 120px;
+          height: 36px;
+          font-family: Smart;
+          font-size: 14px;
+          font-weight: 500;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.29;
+          letter-spacing: normal;
+          text-align: center;
+          color: $black;
+          margin: auto;
+        }
+      }
+    }
+  }
+
+  .sub-status-section {
+    @media screen and (max-width: $mobileBreakpoint) {
+      background: $purewhite !important;
+    }
+    h2 {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    .sub-status-data {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      .progress-status {
+        width: 100%;
+        p {
+          font-size: 14px;
+          font-weight: 600;
+          color: #7F7F7F;
+        }
+        h2 {
+          margin-top: 0px;
+          font-weight: 600;
+        }
+        .progress {
+          width: 90%;
+        }
+      }
+    }
+    .editable-section {
+      font-family: Smart;
+      font-size: 35px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #000000;
+      @media screen and (max-width: $mobileBreakpoint) {
+        font-size: 22px;
+      }
+      &.wide {
+        width: 100%;
+      }
+    }
+  }
+  .sub-info-section {
+    @media screen and (max-width: $mobileBreakpoint) {
+      background-color: $white-two;
+      margin-top:20px;
+      padding-bottom:40px;
+      margin-bottom:20px;
+    }
+
+    .sub-info-section-label{
+      .small-car-image{
+        @media(max-width: $mobileBreakpoint) {
+          width: 27px;
+          height: 27px;
+          margin-right: 10px;
+          margin-top: 15px;
+        }
+      }
+      h3{
+        @media(max-width: $mobileBreakpoint) {
+          font-weight: bold;
+        }
+      }
+      @media(max-width: $mobileBreakpoint) {
+        display: flex;
+        flex-flow: nowrap;
+      }
+    }
+
+    .sub-date-mileage-info{
+      h2{
+        @media(max-width: $mobileBreakpoint) {
+          font-size: 18px;
+          font-weight: normal;
+          .mileage-package{
+            float: right;
+          }
+        }
+      }
+    }
+    .add-ons {
+      h2 {
+        margin-bottom: 0px;
+      }
+      .miles-added {
+        border-bottom: 1px solid #d7d8d9;
+        height: 34px;
+        display: block;
+        position: relative;
+        width: 100%;
+        h2 {
+          font-size: 18px;
+          font-weight: normal;
+          position: absolute;
+          background: $purewhite;
+          @media(max-width: $mobileBreakpoint) {
+            background: $white-two;
+          }
+        }
+        .miles-value {
+          font-weight: bold;
+          @media(max-width: $mobileBreakpoint) {
+            font-weight: normal;
+          }
+          right: 0px;
+        }
+      }
+      .total-miles {
+        @media(max-width: $mobileBreakpoint) {
+          border-bottom: 1px solid #d7d8d9;
+          height: 34px;
+          display: block;
+          position: relative;
+          width: 100%;
+          h2 {
+            font-size: 18px;
+            font-weight: bold;
+            position: absolute;
+            background: $white-two;
+            color:$blue;
+          }
+          .miles-value {
+            font-weight: bold;
+            right: 0px;
+            color:$blue;
+          }
+        }
+      }
+      .link {
+        font-size: 17px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        a {
+          text-decoration: underline;
+          color: $lightskyblue;
+        }
+      }
+    }
+    div.subscription-documents {
+      div.subscription-document {
+        float:left;
+        margin-right:25px;
+        margin-bottom:10px;
+
+        a {
+          display: inline-block;
+          margin: 10px 0px 30px;
+          .pdf-logo-download {
+            img {
+              width: 23px;
+              margin-right: 20px;
+            }
+            border: 1px solid $silver;
+            border-radius: 3px;
+            background-color: $white-two;
+            color: $darkskyblue;
+            padding: 16px;
+          }
+        }
+      }
+      div.renewal-info {
+        clear:both;
+      }
+    }
+    p {
+      color: $textgrey;
+      font-size: 12px;
+      margin-bottom: 25px;
+    }
+    h2 {
+      a {
+        color: $darkskyblue;
+        font-weight: normal;
+      }
+      font-weight: bold;
+      @media(max-width: $mobileBreakpoint) {
+        font-size: 18px;
+        font-weight: normal;
+        margin-top: 10px;
+      }
+    }
+    .mileage-section{
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      white-space: nowrap;
+      .horizontal-line {
+        border-bottom: 1px solid #d7d8d9;
+        width: 67%;
+      }
+      .subscription-miles{
+        display: flex;
+        flex-direction: row;
+        flex-flow: nowrap;
+        justify-content: space-between;
+        margin-top: 10px;
+      }
+      .add-on-miles-section {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        .add-on-label {
+          color: $textgrey;
+          font-size: 14px;
+          line-height: 1.9;
+        }
+        .miles {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+        .add-on-link {
+          margin-top: 20px;
+          text-decoration: unset;
+        }
+      }
+      .total-miles-section {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        color: $darkish-blue;
+        font-weight: bold;
+      }
+      .contract-link{
+        margin-top: 40px;
+        text-decoration: unset;
+      }
+    }
+  }
+
+  .upcoming-payments {
+    @media(max-width: $mobileBreakpoint) {
+      height: 200px !important;
+      background-color: $white-two;
+    }
+    .upcoming-payment {
+      display: block;
+      position: relative;
+      width: 100%;
+      border-bottom: 1px solid $silver;
+      height: 34px;
+      h2 {
+        font-size: 18px;
+        position: absolute;
+        background: $white-two;
+        &.payment-label {
+          left: 0px;
+        }
+        &.payment-value {
+          font-weight: bold;
+          right: 0px;
+        }
+      }
+    }
+    .csa-button {
+      margin-top: 50px;
+      max-width: 500px;
+      font-weight: bold;
+    }
+  }
+
+  .sub-account-section {
+    .account-link {
+      margin-top: 25px;
+      img.arrow {
+        float: right;
+      }
+    }
+  }
+
+  p {
+    &.error-message {
+      text-align:left;
+    }
+  }
+}

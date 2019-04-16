@@ -1,0 +1,241 @@
+@import "../variables";
+
+$headerHeight: 100px;
+$mobileHeaderHeight: 85px;
+$mobileTransition: all 0.1s ease-in-out;
+
+.layout header {
+  height: auto;
+}
+
+header {
+  height: $headerHeight;
+  margin: 0 auto;
+  width: 100%;
+  border-bottom: 1px solid #e9e9e9;
+  @media(max-width: $mobileBreakpoint) {
+    height: 80px;
+  }
+
+  .csa-header {
+    width: 100%;
+    height: $headerHeight;
+    transition: $mobileTransition;
+    overflow: visible;
+    z-index: 5;
+    position: relative;
+    margin: 0 auto;
+    max-width: 1440px;
+    background-color: #fff;
+
+    &.full-stretch {
+      padding: 0px 15px;
+    }
+
+    @media(max-width: $mobileBreakpoint) {
+      height: $mobileHeaderHeight;
+      position: fixed;
+      top: 0px;
+      background-color: $white-two;
+
+      &.silver-bg {
+        background-color: $silver-light
+      }
+    }
+
+    .logout-link {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+    }
+
+  .header-logo {
+    float: left;
+    height: 128px;
+    @media(max-width: $mobileBreakpoint) {
+      height: 45px;
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+    position: absolute;
+    img {
+      transition: $mobileTransition;
+      height: 100%;
+    }
+  }
+
+    .header-nav, .logout-link {
+      display: none;
+      @media(min-width: $mobileBreakpoint + 1px) {
+        display: inline-block;
+      }
+    }
+
+    .mobile-nav {
+      display: none;
+      float: right;
+      @media(max-width: $mobileBreakpoint) {
+        display: inline-block;
+      }
+
+      .menu-icon {
+        width: 35px;
+        cursor: pointer;
+        margin-top: 30px;
+        .bar {
+          height: 2px;
+          margin: 5px;
+          border-radius: 2px;
+          background-color: $black;
+        }
+        .close-notification{
+          width:25px;
+          height:25px;
+          position:relative;
+        }
+        .close-notification:before,.close-notification:after{
+          content:'';
+          position:absolute;
+          width:20px;
+          height:3px;
+          background-color:#000000;
+          top:8px;
+        }
+        .close-notification:before{
+            -webkit-transform:rotate(45deg);
+            -moz-transform:rotate(45deg);
+            transform:rotate(45deg);
+            left:8px;
+        }
+        .close-notification:after{
+            -webkit-transform:rotate(-45deg);
+            -moz-transform:rotate(-45deg);
+            transform:rotate(-45deg);
+            right:-3px;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+      .menu-content {
+        display: block;
+        max-height: 0px;
+        overflow: hidden;
+        transition: $mobileTransition;
+        background-color: $purewhite;
+        position: absolute;
+        top: $mobileHeaderHeight;
+        right: 0px;
+        width: 100%;
+        box-shadow: 0 4px 4px rgba(0,0,0,.1);
+
+        div {
+          &.button-wrapper {
+            text-align:center;
+            button {
+              width:90%;
+
+              a {
+                @media(max-width: $mobileBreakpoint) {
+                  display:inline-block;
+                  background-color:inherit;
+                  padding:0;
+                  width:100%;
+                  height:100%;
+                  &:hover {
+                    color:inherit;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        a {
+          color: $darkish-blue;
+          display: block;
+          padding: 15px 25px;
+          font-size: 18px;
+          font-weight: bold;
+          text-decoration: none;
+          &:hover {
+            color: $scarlet;
+            @media(max-width: $mobileBreakpoint) {
+              color:$purewhite;
+            }
+          }
+          @media(max-width: $mobileBreakpoint) {
+            font-weight: normal;
+            color:$purewhite;
+
+          }
+        }
+        &.expanded {
+          -webkit-tap-highlight-color: rgba(0,0,0,0);
+          -webkit-tap-highlight-color: transparent;
+          background-color: $brownish-grey;
+          max-height:inherit;
+          position: fixed;
+          bottom: 0;
+          width: 90%;
+          padding-top:15px;
+          padding-bottom:25px;
+          overflow-y:scroll;
+
+          a {
+            &.active {
+              pointer-events: none;
+              background-color: rgba(255, 255, 255, 0.15);
+            }
+          }
+          .button-wrapper {
+            margin-top:10px;
+          }
+
+          &::-webkit-scrollbar {
+            width: 0px;  /* remove scrollbar space */
+            background: transparent;  /* optional: just make scrollbar invisible */
+          }
+          /* optional: show position indicator in red */
+          &::-webkit-scrollbar-thumb {
+            background: #FF0000;
+          }
+
+          hr {
+            margin: 0 25px;
+            border-color: $lightestgrey-one;
+          }
+        }
+      }
+    }
+
+    .header-nav {
+      height: $headerHeight;
+      float: right;
+      letter-spacing: -0.3px;
+      font-size: 18px;
+      a {
+        position: relative;
+        color: $darkish-blue;
+        &.active {
+          cursor: default;
+        }
+        &.active::after {
+          height: 2px;
+          position: absolute;
+          left: 0;
+          width: 100%;
+          content: " ";
+          background: $scarlet;
+          bottom: -5px;
+        }
+        text-decoration: none;
+        margin-right: 50px;
+        line-height: $headerHeight;
+        &:last-child {
+          margin-right: 0px;
+        }
+      }
+    }
+  }
+}

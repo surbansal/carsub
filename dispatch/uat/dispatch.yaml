@@ -1,0 +1,5 @@
+dispatch:
+  - url: "uat.carsubscription.calstate.aaa.com/*"
+    service: csa-web
+  - url: "uatapi.carsubscription.calstate.aaa.com/*"
+    service: csa-api

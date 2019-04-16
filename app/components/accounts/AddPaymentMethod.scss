@@ -1,0 +1,150 @@
+@import '../../assets/scss/variables';
+.add-payment {
+  .add-payment-sections {
+    .add-payment-section {
+      margin-bottom: 25px;
+      label {
+        height: 20px;
+        font-family: Smart;
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $textgrey;
+        @media screen and (min-width: 0px) and (max-width: 767px) {
+          width: 100%;
+          .sub-label {
+            font-size: 12px;
+            margin-top: 2px;
+          }
+        }
+      }
+      .add-payment-inline {
+        display: flex;
+        flex-flow: row nowrap;
+      }
+      .add-payment-expiration {
+        margin-bottom: 24px;
+        margin-right: 7px;
+        .stripe-input {
+          width: 170px;
+        }
+        @media screen and (min-width: 0px) and (max-width: 767px) {
+          width: 55%;
+          .stripe-input {
+            width: 100%;
+          }
+        }
+        .expiration-label {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+      .add-payment-cvc {
+        margin-bottom: 7px;
+        .stripe-input {
+          width: 170px;
+        }
+        @media screen and (min-width: 0px) and (max-width: 767px) {
+          width: 45%;
+          .stripe-input {
+            width: 100%;
+          }
+        }
+      }
+      .action-field {
+        margin-bottom: 25px;
+        width: 350px;
+        &.center {
+          text-align: center;
+        }
+        .primary {
+          width: 350px;
+          @media screen and (min-width: 0px) and (max-width: 767px) {
+            width: 100%;
+          }
+        }
+        @media screen and (min-width: 0px) and (max-width: 767px) {
+          width: 100%;
+        }
+      }
+      #addCreditCardNumber {
+        width: 350px;
+        @media screen and (min-width: 0px) and (max-width: 767px) {
+          width: auto;
+        }
+      }
+      .is-processing {
+        cursor: default;
+      }
+      &.make-card-default-section {
+        display: flex;
+        margin-top: -25px;
+        .default-card-text {
+          margin-left: 5px;
+          margin-top: 6px;
+        }
+      }
+
+      .error-message {
+        width: 350px;
+      }
+    }
+    .right-space {
+      margin-right: 24px;
+    }
+  }
+
+  .card-icons {
+    display: flex;
+    @media screen and (min-width: 0px) and (max-width: 767px) {
+      justify-content: space-between;
+      margin-right: 0;
+    }
+    &.selected {
+      img {
+        opacity: 0.5;
+        filter: grayscale(100%);
+      }
+
+      &.visa {
+        img.visa-card {
+          opacity: 1;
+          filter: none;
+        }
+      }
+
+      &.mastercard {
+        img.mastercard-card {
+          opacity: 1;
+          filter: none;
+        }
+      }
+
+      &.discover {
+        img.discover-card {
+          opacity: 1;
+          filter: none;
+        }
+      }
+
+      &.amex {
+        img.amex-card {
+          opacity: 1;
+          filter: none;
+        }
+      }
+    }
+    img {
+      width: 60px;
+      @media screen and (min-width: 0px) and (max-width: 767px) {
+        margin-right: 0 !important;
+      }
+      @media screen and (min-width: 768px) {
+        padding: 5px;
+      }
+    }
+  }
+}

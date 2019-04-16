@@ -1,0 +1,21 @@
+@import "../../assets/scss/variables";
+
+.messaging-page {
+  &.out-of-area  {
+    .header-info {
+      @media(max-width: $mobileBreakpoint) {
+        margin-top: 40px;
+        margin-bottom: 35px;  
+      }
+    }
+    .messaging-content {
+      padding: 100px 0;
+      @media(max-width: $mobileBreakpoint) {
+        padding: 100px 20px;
+        width: auto;
+        left: 0;
+        margin-left: 0;
+      }       
+    }
+  }
+}

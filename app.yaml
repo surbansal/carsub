@@ -1,0 +1,63 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+service: #{AppengineServiceName}
+
+handlers:
+  - url: /favicon.ico
+    static_files: dist/favicon.ico
+    upload: dist/favicon.ico
+    secure: always
+  - url: /icons-180.png
+    static_files: dist/icons-180.png
+    upload: dist/icons-180.png
+    secure: always
+  - url: /icons-192.png
+    static_files: dist/icons-192.png
+    upload: dist/icons-192.png
+    secure: always
+  - url: /icons-512.png
+    static_files: dist/icons-512.png
+    upload: dist/icons-512.png
+    secure: always
+  - url: /manifest.json
+    static_files: dist/manifest.json
+    upload: dist/manifest.json
+    secure: always
+  - url: /styles
+    static_dir: dist/styles
+    secure: always
+  - url: /fonts
+    static_dir: dist/fonts
+    secure: always
+  - url: /images
+    static_dir: dist/images
+    secure: always
+  - url: /main.js
+    static_files: dist/main.js
+    upload: dist/main.js
+    secure: always
+  - url: /admin.js
+    static_files: dist/admin.js
+    upload: dist/admin.js
+    secure: always
+  - url: /backend-cache-worker.js
+    static_files: dist/backend-cache-worker.js
+    upload: dist/backend-cache-worker.js
+    secure: always
+  - url: /robots.txt
+    static_files: dist/robots.txt
+    upload: dist/robots.txt
+    secure: always
+  - url: /sitemap.xml
+    static_files: dist/sitemap.xml
+    upload: dist/sitemap.xml
+    secure: always
+  - url: /admin.*
+    static_files: dist/admin/index.html
+    upload: dist/admin/index.html
+    secure: always
+  - url: /.*
+    static_files: dist/index.html
+    upload: dist/index.html
+    secure: always

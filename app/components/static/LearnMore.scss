@@ -1,0 +1,145 @@
+@import "../../assets/scss/variables";
+
+.learn-more {
+  position: relative;
+  margin-bottom: 35px;
+
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    display: block;
+  }
+
+  .learn-more-categories, .contact-us {
+    @media screen and (max-width: 1100px) {
+      width: 100%;
+    }
+    @media screen and (min-width: 1101px) {
+      width: 50%;
+    }
+    flex-grow: 1;
+    display: block;
+  }
+
+  .learn-more-details {
+    display: flex;
+    flex-flow: row wrap;
+    .learn-more-categories {
+      .category {
+        position: relative;
+        height: 162px;
+        @media screen and (max-width: $mobileBreakpoint) {
+          display: flex;
+          flex-flow: column  nowrap;
+          height: 470px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .category-image {
+          position: absolute;
+          height: 162px;
+          width: 200px;
+          background-color: $silver;
+          display: inline-block;
+          @media screen and (max-width: $mobileBreakpoint) {
+            position: relative;
+            margin-bottom: 10px;
+            height: 260px;
+            width: 80%;
+            margin-right: auto;
+            margin-left: auto;
+          }
+          img {
+            @media screen and (max-width: $mobileBreakpoint) {
+              width: 100% !important;
+              height: 260px !important;
+            }
+          }
+        }
+        .category-description {
+          width: 100%;
+          padding-left: 220px;
+          box-sizing: border-box;
+          @media screen and (max-width: $mobileBreakpoint) {
+            position: relative;
+            padding-left: 0;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+          }
+          p {
+            @media screen and (max-width: $mobileBreakpoint){
+              margin-left: 0;
+              line-height: 26px;
+              font-size: 17px;
+              color: $black;
+            }
+          }
+          h3 {
+            @media screen and (max-width: $mobileBreakpoint){
+              font-size: 18px;
+            }
+          }
+          a{
+            @media screen and (max-width: $mobileBreakpoint){
+              font-size: 17px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .contact-us {
+    position: relative;
+    height: 300px;
+    .contact-us-box {
+      background-color: $white-two;
+      height: 320px;
+      width: 420px;
+      right: 0px;
+      position: absolute;
+      text-align: center;
+      @media screen and (max-width: 1100px) {
+        width: 100%;
+      }
+
+      h2 {
+        color: $brownish-grey;
+        margin-top: 5px;
+      }
+
+      img {
+        height: 47px;
+        width: 54px;
+        margin-top: 65px;
+      }
+
+      button {
+        width: 100%;
+        max-width: 230px;
+        @media screen and (max-width: $mobileBreakpoint){
+          max-width: unset;
+          width: 80%;
+          margin-right: auto;
+          margin-left: auto;
+        }
+      }
+    }
+  }
+
+
+  .item {
+    display: inline-block;
+    flex-grow: 1;
+    max-width: 870px;
+    min-width: 615px;
+    @media screen and (max-width: 1500px) {
+      width: calc(100% - 24px);
+    }
+    @media screen and (min-width: 1501px) {
+      width: calc(50% - 24px);
+    }
+    margin: 12px;
+  }
+}

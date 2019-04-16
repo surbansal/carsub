@@ -1,0 +1,9 @@
+#!/bin/bash
+
+npm run production && \
+rm -rf stage && \
+mkdir stage && \
+cp -r dist/ stage/ && \
+cp app.yaml stage/ && \
+cd stage && \
+gcloud app deploy --project=mwp-dave-arlin --version=1-0-3-snapshot

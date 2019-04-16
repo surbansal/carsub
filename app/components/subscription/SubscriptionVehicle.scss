@@ -1,0 +1,59 @@
+@import "../../assets/scss/variables";
+
+.subscription-vehicle-container {
+  background-color: $purewhite;
+  .subscription-vehicle {
+    padding: 12px;
+    width:70%;
+    margin: 0 auto;
+    background-color: $white-two;
+    border-left: 4px solid $scarlet;
+    border-right: 4px solid $blue;
+    border-radius: 3px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-position: 0 0, 0 100%;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% 4px;
+    -moz-background-size: 100% 4px;
+    background-size: 100% 4px;
+    background-image: -webkit-linear-gradient(left,$scarlet 0%, $blue 100%), -webkit-linear-gradient(left, $scarlet 0%, $blue 100%);
+    background-image: -moz-linear-gradient(left, $scarlet 0%, $blue 100%), -moz-linear-gradient(left, $scarlet 0%, $blue 100%);
+    background-image: -o-linear-gradient(left, $scarlet 0%, $blue 100%), -o-linear-gradient(left, $scarlet 0%, $blue 100%);
+    background-image: linear-gradient(to right, $scarlet 0%, $blue 100%), linear-gradient(to right, $scarlet 0%, $blue 100%);
+
+    @media screen and (max-width: $mobileBreakpoint + 1px) {
+      border-left: none;
+      border-right: none;
+      width:100%;
+    }
+  .confirmation-item {
+    width:100%; 
+    img {
+      width: 100%;
+    }
+
+    label, h2 {
+      padding: 0 2%;
+    }
+
+    @media screen and (min-width: $mobileBreakpoint + 1px) {
+      display: inline-block;
+      flex-grow: 1;
+      width:100%; 
+      img {
+        width:50%;
+      }
+
+      label, h2 {
+        padding: inherit;
+      }
+    }
+
+
+   }
+ }
+
+
+}

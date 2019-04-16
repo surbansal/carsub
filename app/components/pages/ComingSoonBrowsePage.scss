@@ -1,0 +1,32 @@
+@import "../../assets/scss/variables";
+
+.search-bar {
+  width: 100%;
+  height: 35px;
+  margin-bottom: 30px;
+  .search-area {
+    width: 420px;
+    font-size: 15px;
+    color: $brownish-grey;
+    position: relative;
+    display: inline-block;
+    float: right;
+    height: 100%;
+    .area-details {
+      float: left;
+      .area-name {
+        font-weight: bold;
+        color: $darkskyblue;
+      }
+    }
+    .number-of-results {
+      float: right;
+    }
+
+    .line-gradient {
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+    }
+  }
+}

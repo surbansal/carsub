@@ -1,0 +1,90 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+@import '../../assets/scss/variables';
+
+$tint: darken(#F9F9F9, 5);
+
+.slick-slide, .slick-slide * {
+  outline: none !important;
+}
+
+img.slick-arrow {
+  height: 31px;
+  width: 22px;
+  opacity: 1;
+  transition: all 0.1s ease-in-out;
+  &.slick-disabled {
+    opacity: 0;
+  }
+}
+
+.slick-list {
+  width: 100%;
+  .day-previous, day-next {
+    background-color: blue;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+}
+
+.day-slide {
+  text-align: center;
+  @media screen and (max-width: $mobileBreakpoint) {
+    display: flex !important; 
+  }
+  .day-wrapper {
+    display: inline-block;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    font-size: 15px;
+    color: $black;
+    text-align: center;
+    background-color: $white-two;
+    line-height: 0.93;
+    cursor: pointer;
+    border: 2px solid $white-two;
+    @media screen and (max-width: $mobileBreakpoint) {
+      margin-top: 10px;
+      height: 50px;
+      line-height: 0.7;
+      text-align: center;
+      border-radius: unset;
+      width: 75% !important;
+    }
+    span.day-details {
+      margin-top: 26px;
+      display: block;
+      @media screen and (max-width: $mobileBreakpoint) {
+        margin-top: 13px;
+        font-size: 15px;
+      }
+      span {
+        color: $brownish-grey;
+        opacity: 0.5;
+        line-height: 20px;
+      }
+    }
+    @media screen and (max-width: $mobileBreakpoint) {
+      input { 
+        padding: 0 10px; 
+      }
+    }
+  }
+}
+
+.day-wrapper:active, .day-wrapper.selected {
+  border: 2px solid $twilight-blue;
+}
+
+.day-wrapper:hover {
+  background: lighten($tint, 5);
+}
+
+.day-radio {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  opacity: 0;
+}

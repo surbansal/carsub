@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>CSAWeb</id>
+        <version>1.0.0</version>
+        <title>CSA Web</title>
+        <authors>A3 Ventures</authors>
+        <owners>A3 Ventures</owners>
+        <description>Car Subscription Front-end</description>
+        <language>en-US</language>
+    </metadata>
+    <files>
+        <file src="**" exclude="dist\**\*.*;.idea\**;.git\**;stage\**\*.*;tests\**\*.*;node_modules\**"/>
+    </files>
+</package>

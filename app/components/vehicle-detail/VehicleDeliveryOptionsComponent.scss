@@ -1,0 +1,86 @@
+@import "../../assets/scss/variables";
+@import "./VehicleSubscriptionOptionsComponent";
+
+.subscribe-steps {
+  .subscribe-step {
+    .subscribe-step-details {
+      &.delivery-options {
+
+        .day-selector {
+          padding: 1px;
+          height: 100%;
+          width: 100%;
+        }
+
+        .places-autocomplete {
+          margin-top: 8px;
+        }
+
+        .submit-options {
+          margin: 42px 0 20px;
+        }
+
+        h3 {
+          margin: 0;
+          float: none;
+        }
+
+        .appartment-field {
+          margin: 10px 0 10px 1px;
+        }
+
+        @media(max-width: $mobileBreakpoint) {
+          display: flex;
+          flex-direction: column;
+          .delivery-date-mobile {
+            display: block;
+
+            .slick-slider {
+              margin: 0px -75px;
+              margin-left: calc(-7.5vw - 18px);
+              margin-right: calc(-7.5vw - 18px);
+              width: 100vw;
+
+              .slick-track {
+                margin-left: 75px;
+                margin-right: 75px;
+                margin-left: calc(7.5vw + 18px);
+                margin-right: calc(7.5vw + 18px);
+              }
+            }
+          }
+        }
+      }
+
+      h2 {
+        float: left;
+        margin-top: -5px;
+
+        &.disabled {
+          opacity: 0.3;
+          font-size: 18px;
+          margin-top: -2px;
+        }
+      }
+
+      h3 {
+        font-size: 15px;
+        color: $black;
+      }
+
+      h4 {
+        font-size: 12px;
+        color: $lightgrey;
+      }
+    }
+  }
+}
+.error {
+  border: 1px solid red;
+}
+.error-message {
+  color: $scarlet;
+}
+.hide-error {
+  display: none;
+}

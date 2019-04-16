@@ -1,0 +1,75 @@
+@import '../../assets/scss/variables';
+
+.renewal-preferences {
+  @media(max-width: $mobileBreakpoint) {
+    width: 85% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  max-width: 450px;
+  margin-right: auto;
+  margin-left: auto;
+    .description {
+      p {
+        margin-bottom: 30px;
+      }
+    }
+    .renewal-options {
+      .selected-option {
+        border-color: $blue !important;
+      }
+      .renewal-option {
+        display: flex;
+        margin: 20px 0;
+        justify-content: space-around;
+        border: 2px solid $silver;
+        border-radius: 3px;
+        .icon-text {
+          display: flex;
+          flex-flow: column nowrap;
+          padding: 10px;
+          padding-left: 0;
+          margin: 5px 25px 5px 10px;
+          border: none;
+          width: 65%;
+          .heading {
+            padding-bottom: 5px;
+          }
+        }
+        .icon-container {
+          margin-top: 12px;
+          margin-left: 10px;
+          .icon-text {
+            margin: 5px;
+            margin-right: 20px;
+          }
+        }
+        &.renew {
+          img {
+            width: 27px !important;
+            height: 27px !important;
+          }
+        }
+        &.swap {
+          img {
+            width: 40px !important;
+            height: 40px !important;
+          }
+        }
+        &.return {
+          img {
+            width: 45px !important;
+            height: 45px !important;
+          }
+        }
+      }
+    }
+    button {
+      margin-top: 20px;
+      width: 100% !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      margin-bottom: 50px;
+    }
+  }
+

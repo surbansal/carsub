@@ -1,0 +1,207 @@
+@import '../../assets/scss/variables';
+
+.faqs-page {
+  .header-info {
+    h1 {
+      width: 100%;
+      text-align: center;
+      margin-top: 0px;
+      @media screen and (max-width: $mobileBreakpoint) {
+        font-size: 29px;
+        margin: 15px 7px 0;
+        text-align: left;
+      }
+    }
+  }
+
+  .faqs-details {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-between;
+    margin-top: 45px;
+    .category {
+      position: relative;
+      display: inline-block;
+      width: 35%;
+      .category-list {
+        ul {
+          list-style-type: none;
+          padding: 0;
+          li {
+            line-height: 3;
+            span {
+              outline: 0;
+              &:hover {
+                cursor: pointer;
+                color: $black;
+              }
+            }
+            img {
+              display: none;
+              float: right;
+              @media screen and (max-width: $mobileBreakpoint) {
+                display: block;
+                margin-top: 1em;
+              }
+            }
+            .category-icon {
+              padding-left: 4px;
+              img {
+                display: block;
+                margin-top: 4px;
+                float: left;
+                width: 39px;
+                height: 37px;
+                @media screen and (max-width: $mobileBreakpoint) {
+                  display: none;
+                  margin-top: 1em;
+                }
+              }
+            }
+          }
+        }
+        .category-label-black {
+          color: $pureblack;
+        }
+        .category-label-blue {
+          color: $darkskyblue;
+        }
+      }
+    }
+    .question {
+      position: relative;
+      display: inline-block;
+      width: 65%;
+      .question-list-item {
+        margin: 25px 0px;
+      }
+      .accordion__title {
+        position: relative;
+        &:before {
+          content: '\A';
+          display: block;
+          border-width: 6px 0px 6px 10px;
+          border-color: transparent transparent transparent $silver;
+          position: absolute;
+          left: -30px;
+          top: 12px;
+          border-style: solid;
+        }
+        &[aria-selected='true']:before {
+          border-width: 10px 6px 0px 6px;
+          border-color: $silver transparent transparent transparent;
+        }
+
+        &:not(.not-expandable) {
+          cursor: pointer;
+          outline: 0;
+          &:hover {
+            background-color: $purewhite;
+          }
+        }
+        .q-label {
+          display: inline;
+        }
+      }
+
+      .breadcrumb {
+        display: none;
+      }
+
+      h3.question-title {
+        display: none;
+      }
+    }
+    .line {
+      margin-top: 30px;
+      width: calc(100% + 30px);
+      margin-left: -30px;
+      @media screen and (max-width: $mobileBreakpoint) {
+        display: none;
+      }
+    }
+  }
+
+  .line {
+    margin-top: 78px;
+  }
+
+  .image{
+    width:100%;
+  }
+
+  @media screen and (max-width: $mobileBreakpoint) {
+    padding: 0 10px;
+    h3 {
+      display: none;
+    }
+    .image {
+      display: none;
+    }
+    .learn-more {
+      display: none;
+    }
+    .faqs-details {
+      margin-top: 0;
+      .category {
+        width: 100%;
+      }
+      .question {
+        display: none;
+      }
+    }
+  }
+
+  @media screen and (min-width: $mobileBreakpoint + 1px) {
+    padding: 0 90px;
+  }
+
+  &.has-category-selected {
+    @media screen and (max-width: $mobileBreakpoint) {
+      padding: 0 10px;
+      .accordion__item h3 {
+        display: inline-block;
+      }
+      .faqs-details {
+        margin: 0 10px 0;
+        .category {
+          display: none;
+        }
+        .question {
+          width: 100%;
+          display: inline-block;
+          .breadcrumb {
+            display: inline-block;
+            margin: 33px 0 0 !important;
+          }
+          h3.question-title {
+            display: block;
+            font-size: 24px;
+          }
+          .question-list-item {
+            margin: 0 30px;
+            @media screen and (max-width: $mobileBreakpoint) {
+              margin: 20px 30px;
+            }
+          }
+          .accordion__title:before {
+            top: 25px;
+            @media screen and (max-width: $mobileBreakpoint) {
+              top: 5px;
+            }
+          }
+          .q-label {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}

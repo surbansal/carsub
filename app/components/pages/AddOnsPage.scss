@@ -1,0 +1,115 @@
+@import '../../assets/scss/variables';
+.add-ons-container {
+  .add-ons-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 450px;
+    h2 {
+      font-weight: bold;
+      font-size: 29px;
+      @media(max-width: $mobileBreakpoint) {
+        font-weight: normal;
+      }
+    }
+    .miles-list{
+      margin-bottom: 9px;
+      @media(max-width: $mobileBreakpoint) {
+        margin-bottom: 15px;
+      }
+    }
+    .miles-added {
+      border-bottom: 1px solid #d7d8d9;
+      height: 28px;
+      display: block;
+      position: relative;
+      width: 100%;
+      h2 {
+        font-size: 14px;
+        font-weight: normal;
+        position: absolute;
+        background: $purewhite;
+      }
+      .miles-value {
+        font-weight: bold;
+        right: 0px;
+      }
+    }
+    .total-miles-added {
+        margin-bottom: 50px;
+      h2 {
+        font-size: 18px;
+        font-weight: bold;
+        @media(max-width: $mobileBreakpoint) {
+          font-weight: 500;
+        }
+      }
+      @media(max-width: $mobileBreakpoint) {
+        margin-bottom: none;
+        height: 34px;
+      }
+    }
+    .mileage-package {
+      position: relative;
+      h2 {
+        font-size: 14px;
+        font-weight: normal;
+        color: $lightgrey;
+        display:inline-block;
+      }
+      .package-value {
+        float:right;
+      }
+    }
+    .desktop-breadcrumb {
+      display: inline;
+      @media(max-width: $mobileBreakpoint) {
+        display: none;
+      }
+    }
+      .mobile-breadcrumb {
+        display: none;
+        @media(max-width: $mobileBreakpoint) {
+          display: inline;
+        }
+        .breadcrumb {
+          margin-left: 0 !important;
+        }
+    }
+
+  }
+  @media(max-width: $mobileBreakpoint) {
+    padding: 0px 30px;
+    margin-top: -8px;
+  }
+}
+
+.call-us-container{
+  @media(max-width: $mobileBreakpoint) {
+    height: 270px;
+    background-color: $white-two;
+    padding: 0 30px;
+  }
+  .call-us-content{
+    padding-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 450px;
+    @media(max-width: $mobileBreakpoint) {
+      display: flex;
+      flex-direction: column;
+    }
+    .content{
+      @media(max-width: $mobileBreakpoint) {
+        color: $black;
+        padding: 0;
+        line-height: 1.7;
+        margin-bottom: 20px;
+       }
+      }
+    a {
+      @media(max-width: $mobileBreakpoint) {
+        text-decoration: unset !important;
+      }
+    }
+  }
+}

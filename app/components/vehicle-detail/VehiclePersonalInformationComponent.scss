@@ -1,0 +1,118 @@
+@import "../../assets/scss/variables";
+@import "VehicleSubscriptionOptionsComponent";
+
+.subscribe-step {
+
+  .subscribe-step-details {
+
+    .verify-code-container {
+      margin-right:-25px;
+
+      input {
+        &[type=number]{
+          &::-webkit-inner-spin-button,
+          &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+          }
+        }
+        margin-top: 10px;
+
+        &.single-digit {
+          width: 45px;
+          margin-right: 26px;
+          padding: 16px;
+
+          &.last {
+            margin-right:0;
+          }
+        }
+      }
+    }
+
+    button {
+      margin-top:10px;
+    }
+
+    .subscribe-step-inline {
+      width: 100%;
+      position: relative;
+
+      .subscribe-step-detail-1 {
+        width: calc(100% - 120px);
+      }
+
+      .subscribe-step-detail-2 {
+        position:absolute;
+        right: 0px;
+        top: 0px;
+
+        input {
+          width: 86px;
+        }
+      }
+      .state-label {
+        position: inherit;
+        margin-left: 13px;
+      }
+    }
+
+    .submit-personal-info {
+      margin: 42px 0 20px;
+
+
+    }
+
+    .fine-print {
+      &.left-align {
+        text-align: inherit;
+      }
+      &.sms-verify {
+        p {
+          margin: 15px 0px 20px 45px;
+          padding-top: 5px;
+        }
+      }
+    }
+
+    &.hidden {
+      display: none;
+    }
+
+    &.show {
+      display: block;
+    }
+
+    .has-name-label{
+      padding: 9px;
+    }
+    input {
+      &#appartmentNo {
+        width: 100%;
+      }
+    }
+  }
+  .name-container {
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    justify-content: space-between;
+    .name-field {
+      margin-right: 7px;
+    }
+  }
+  @media screen and (max-width: 1420px)  {
+    .name-container {
+      display: flex;
+      flex-flow: column;
+      width: 100%;
+      justify-content: space-around;
+      .name-field {
+        margin-right: 0px;
+        margin-bottom: 7px;
+      }
+    }
+  }
+}
+

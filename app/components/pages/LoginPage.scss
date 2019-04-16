@@ -1,0 +1,70 @@
+@import '../../assets/scss/variables';
+
+$label-color: #949494;
+
+.login-page, .forgot-password-page, .reset-password-page{
+  margin:auto;
+  .action-field {
+    margin-bottom: 25px;
+    width: 350px;
+    @media screen and (max-width: $mobileBreakpoint + 1px) {
+      margin-left: auto;
+      margin-right: auto;
+      width: 319px;
+    }
+    button {
+      width: 100%;
+    }
+  }
+  input, a {
+    width: 100%;
+  }
+  button {
+    width: 100%;
+  }
+  button:disabled:hover {
+    cursor: not-allowed;
+  }
+
+  a {
+    display:block;
+    text-align:center;
+    text-decoration: none;
+  }
+  .success-message {
+    color: #5FBA7D;
+    @media screen and (max-width: $mobileBreakpoint + 1px) {
+      text-align: center;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .heading {
+    font-size: 29px;
+    @media screen and (max-width: $mobileBreakpoint + 1px) {
+      text-align: center;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .forgot-link {
+    @media screen and (max-width: $mobileBreakpoint + 1px) {
+      margin-top: 34px;
+      margin-bottom: 56px;
+    }
+  }
+  .breadcrumb {
+    a {
+      text-align: left;
+    }
+  }
+}
+
+.content-body.login-page, .forgot-password-page, .reset-password-page {
+  @media screen and (max-width: $mobileBreakpoint + 1px) {
+    margin-top: 10px !important;
+  }
+}
+

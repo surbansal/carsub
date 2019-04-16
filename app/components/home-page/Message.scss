@@ -1,0 +1,44 @@
+@import "../../assets/scss/variables";
+
+.message {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto 60px auto;
+  @media screen and (max-width: $mobileBreakpoint) {
+    margin-bottom: 0px;
+  }
+  .message-title {
+    text-align: center;
+    @media screen and (max-width: $mobileBreakpoint) {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h2 {
+      font-size: 27px;
+      display: block;
+    }
+  }
+  .message-description {
+    width: 50%;
+    line-height: 1.8;
+    letter-spacing: -0.2px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    @media screen and (max-width: $mobileBreakpoint) {
+      width: 85%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .full-line {
+    width: 100% !important;
+    position: relative;
+    display: none;
+    @media screen and (max-width: $mobileBreakpoint) {
+      display: flex;
+    }
+  }
+}

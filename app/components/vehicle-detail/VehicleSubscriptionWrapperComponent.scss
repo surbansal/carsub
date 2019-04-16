@@ -1,0 +1,385 @@
+@import "../../assets/scss/variables";
+
+.vehicle-detail-subscribe {
+  float:right;
+  width:33%;
+  border-style: solid;
+  border-color:$white;
+  border-width:0 1px 0 1px;
+
+  @media screen and (max-width: $mobileBreakpoint) {
+    width:100%;
+    margin-bottom:40px;
+  }
+
+  .line-gradient {
+    width:100%;
+  }
+  .mobile-header {
+    padding: 0 30px 7px 18px;
+    .mobile-car-model-year {
+      font-size: 28px;
+      font-weight: 900;
+    }
+  }
+
+  .mobile-navigation {
+    padding: 0 30px 0 18px;
+    margin: 18px 0;
+    span {
+      font-size: 18px;
+      color: $lightblue;
+      cursor: pointer;
+      font-weight: bold;
+      &:focus {
+        outline: none;
+        outline: 0;
+        border: none;
+        -moz-outline-style: none;
+      }
+    }
+  }
+  .mobile-h2 {
+    padding: 0 0 0 18px;
+  }
+  .header-container {
+    clear:both;
+    padding:50px 55px 20px 18px;
+    @media screen and (max-width: $mobileBreakpoint) {
+      padding:  0px;
+    }
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    .header-label {
+      color:$brownish-grey;
+      min-width: 140px;
+      margin-bottom: 12px;
+      @media screen and (max-width: $mobileBreakpoint) {
+        margin-top: 4px;
+      }
+    }
+    .header-cost {
+      display: flex;
+      flex-flow: row;
+      justify-content: space-between;
+      .header-total-cost {
+        font-weight:bold;
+        color:$twilight-blue;
+        font-size:20px;
+        margin-right: 6px;
+      }
+      .header-tooltip {
+        width: 20px;
+      }
+    }
+
+
+    img {
+      float:right;
+      display:block;
+      margin-top:3px;
+      cursor:pointer;
+    }
+  }
+
+  .disabled-input {
+    .subscribe-step {
+      pointer-events: none;
+    }
+  }
+
+  .subscribe-steps{
+    padding-top:14px;
+    .delivery-options-label {
+      display: flex;
+      flex-flow: row;
+    }
+    .mobile-steps-no {
+      margin-left: 19px;
+    }
+    .step-number {
+      float:left;
+      margin:0 8px 0 19px;
+      @media screen and (max-width: $mobileBreakpoint) {
+        margin:0 8px 0 0;
+      }
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      padding: 2px;
+
+      color:$lightblue;
+      border: 2px solid $lightblue;
+      text-align: center;
+      font-size:14px;
+      font-weight:500;
+
+      &.completed {
+        background-color:$lightblue;
+        color:$white;
+      }
+      @media screen and (max-width: $mobileBreakpoint) {
+        &.not-completed {
+          background-color: $lightestgrey-three;
+          color: $purewhite;
+          border-color: $lightestgrey-three;
+        }
+      }
+    }
+
+    .subscribe-step {
+      clear:both;
+      padding-top:27px;
+      border-width:0 0 0 0;
+      border-style:solid;
+      border-color:$white;
+
+      .subscribe-step-details {
+        clear:both;
+        margin:0 53px 30px 53px;
+
+        .sub-label {
+          font-size:12px;
+          color:$lightergrey;
+        }
+
+        .info {
+          cursor:pointer;
+        }
+
+        .price-line-item {
+          clear:both;
+          color:$brownish-grey;
+          font-size:15px;
+          height:20px;
+          margin-bottom:15px;
+          @media screen and (max-width: $mobileBreakpoint) {
+            margin-bottom: 5px;
+            font-size: 14px;
+            font-weight: bold;
+          }
+
+          @media screen and (min-width: $mobileBreakpoint + 1px) and (max-width: 1300px) {
+             height:inherit;
+          }
+
+          .total {
+            color:$twilight-blue;
+            font-weight:bold;
+          }
+          .line-item-name {
+            float:left;
+            &.total {
+              font-size:18px;
+              @media screen and (max-width: $mobileBreakpoint) {
+                font-size:14px;
+              }
+            }
+            @media screen and (min-width: $mobileBreakpoint + 1px) and (max-width: 1300px) {
+              float:inherit;
+              clear:both;
+            }
+          }
+          .line-item-price {
+            float:right;
+            &.total {
+              font-size:24px;
+              @media screen and (max-width: $mobileBreakpoint) {
+                font-size:16px;
+              }
+            }
+
+            @media screen and (min-width: $mobileBreakpoint + 1px) and (max-width: 1300px) {
+              float:inherit;
+              clear:both;
+              font-weight:bold;
+            }
+          }
+        }
+
+        .same-address-container {
+          margin: 12px 0 25px;
+          float: left;
+          clear: both;
+          label {
+            display: block;
+            padding: 8px 0 0 40px;
+          }
+          .home-address {
+            clear: both;
+            margin-left: 42px;
+            font-size: 12px;
+            color: $lightergrey;
+          }
+        }
+
+        .submit-options {
+          margin:42px 0 20px;
+
+          button {
+            width: 100%;
+            padding:12px 50px;
+            font-weight:bold;
+            &[disabled] {
+              cursor: default;
+            }
+          }
+        }
+
+        .fine-print {
+          p {
+            margin-bottom:20px;
+          }
+        }
+
+        hr {
+          color:$lightgrey;
+          margin:15px 0;
+        }
+
+        select {
+          width:100%;
+          color:$darkish-blue;
+          /* styling */
+          border: thin solid $silver;
+          border-radius: 4px;
+          display: inline-block;
+          font: inherit;
+          font-weight:500;
+          line-height: 1.5em;
+          padding: 0.5em 3.5em 0.5em 1em;
+
+          /* reset */
+
+          margin: 0;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+
+          background-image:
+            linear-gradient(45deg, transparent 50%, gray 50%),
+            linear-gradient(135deg, gray 50%, transparent 50%),
+            linear-gradient(to right, #ccc, #ccc);
+          background-position:
+            calc(100% - 20px) calc(1em + 2px),
+            calc(100% - 15px) calc(1em + 2px),
+            calc(100% - 2.5em) 0.5em;
+          background-size:
+            5px 5px,
+            5px 5px,
+            1px 1.5em;
+          background-repeat: no-repeat;
+          background-color: $purewhite;
+          &:focus {
+            border-color: $brownish-grey;
+          }
+
+          option {
+            color: $textgrey;
+            &:checked {
+              color:$darkish-blue;
+              font-weight:500;
+            }
+          }
+        }
+
+        select:-moz-focusring {
+          color: transparent;
+          text-shadow: 0 0 0 #000;
+        }
+
+        h3 {
+          margin:0;
+          float:left;
+          width:90%;
+        }
+
+        h4 {
+          clear:both;
+          padding-top:10px;
+        }
+
+        img.info {
+          float:right;
+        }
+
+        input[type="checkbox"] {
+          float: left;
+          margin-top: 5px;
+        }
+
+        .subscription-step-heading {
+          display: none;
+          @media(max-width: $mobileBreakpoint) {
+            display: block;
+            padding: 20px 0 20px 0 ;
+          }
+        }
+      }
+
+
+      h3 {
+        font-size:18px;
+        color:$black;
+      }
+
+      h4 {
+        font-size:15px;
+        color:$black;
+      }
+
+      h5 {
+        font-size:12px;
+        color:$lightgrey;
+      }
+    }
+  }
+
+
+  h2 {
+    padding:50px 0 0 18px ;
+    margin:0;
+  }
+
+  .accordion__title {
+    float:left;
+    width:100%;
+    padding:30px 0;
+  }
+
+  .accordion__item {
+    border-top:solid 1px $white;
+    float:left;
+    width:100%;
+    [aria-selected='false'] {
+      h3 {
+        font-weight:normal;
+        color:$black;
+        opacity:0.3;
+      }
+
+      .step-number {
+        &:not(.completed) {
+          color:$black;
+          border-color:$black;
+          opacity:0.3;
+        }
+      }
+    }
+
+    &.last {
+      border-bottom:solid 1px $white;
+    }
+  }
+
+
+
+  h3 {
+     float:left;
+     margin:0 0 0 2px;
+     font-size:18px;
+   }
+}

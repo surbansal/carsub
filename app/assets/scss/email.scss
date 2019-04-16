@@ -1,0 +1,36 @@
+$hover-color: #1976d2;
+
+.card{
+    width: 90%;
+    border: 1px solid gray;
+    box-shadow: 1px 1px 3px #888;
+    min-height: 250px;
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+a {
+    color: $darkskyblue;
+    text-decoration: none;
+    transition: color 0.4s;
+}
+
+a:hover {
+color: $hover-color;
+}
+
+.text-center {
+text-align: center;
+}
+
+.container {
+margin: 0 auto;
+text-align: center;
+margin-top:16px;
+width: 90%;
+}
+
+.card-heading {
+padding: 16px;
+}

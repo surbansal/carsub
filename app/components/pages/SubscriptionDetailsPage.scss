@@ -1,0 +1,85 @@
+@import "../../assets/scss/variables";
+
+.subscription-details-container {
+  white-space: nowrap;
+  @media(max-width: $mobileBreakpoint) {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .subscription-details-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 450px;
+    .breadcrumb {
+        @media(max-width: $mobileBreakpoint) {
+          margin: 20px 0 20px 0 !important;
+        }
+      }
+    .subscription-details-label{
+      margin-top: 0;
+    }
+    .expiration-date {
+      display: flex;
+      flex-flow: column;
+      line-height: 1.9;
+      span {
+        color: $textgrey;
+        font-size: 14px;
+      }
+    }
+    .mileage-section{
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      height: 320px;
+      .horizontal-line {
+        border-bottom: 1px solid #d7d8d9;
+        width: 67%;
+      }
+      .subscription-miles{
+        display: flex;
+        flex-direction: row;
+        flex-flow: nowrap;
+        justify-content: space-between;
+        .subscription-total-miles{
+          font-weight: bold;
+        }
+      }
+      .add-on-miles-section {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        .add-on-label {
+          color: $textgrey;
+          font-size: 14px;
+          line-height: 1.9;
+        }
+        .miles {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          .add-ons-total-miles{
+            font-weight: bold;
+          }
+        }
+        .add-on-link {
+          margin-top: 20px;
+          text-decoration: unset;
+        }
+      }
+      .total-miles-section {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        color: $darkish-blue;
+        font-weight: bold;
+      }
+      .contract-link{
+        margin-top: 40px;
+        text-decoration: unset;
+      }
+    }
+  }
+}

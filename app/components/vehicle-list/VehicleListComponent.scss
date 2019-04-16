@@ -1,0 +1,125 @@
+@import "../../assets/scss/variables";
+
+.vehicle-list-wrapper {
+  display: -webkit-flex; /* Safari */
+  -webkit-flex-flow: column wrap; /* Safari 6.1+ */
+  display: flex;
+  flex-flow: column wrap;
+  @media(min-width: $mobileBreakpoint + 1px) {
+    width: 76%;
+  }
+
+
+  .vehicle-list {
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+
+    .vehicle-availability-info-box {
+      border-radius: 5px;
+      background-color: rgba($lightskyblue, 0.15);
+      margin: 20px 10px 0 0;
+      padding: 13px 20px;
+
+      .vehicle-availability-message {
+        color: $lightskyblue;
+        .link-button {
+          @media(max-width: $mobileBreakpoint) {
+            display: none;
+          }
+          color: $lightskyblue;
+          margin-left: 5px;
+          font-weight: bold;
+        }
+      }
+      &.vehicle-top {
+        margin-top: 8px;
+      }
+    }
+
+    .vehicle-availability-subtext, .vehicle-availability-info-box {
+      width: 80%;
+      height: 58px;
+      display: flex;
+      flex-grow: 1;
+      align-items: center;
+      margin-left: 16px;
+      @media(max-width: $mobileBreakpoint) {
+        margin-left: 28px;
+        margin-right: 28px;
+      }
+    }
+
+    .reset-filters-button {
+      font-weight: 500;
+      font-size: 14px;
+      margin-top: 30px;
+      color: $lightskyblue;
+      text-decoration: none;
+    }
+
+    .list-item {
+      display: inline-block;
+      flex-grow: 1;
+      min-width: 415px;
+      margin: 11px 16px;
+      @media screen and (max-width: $mobileBreakpoint) {
+        max-width: 870px;
+      }
+      @media screen and (max-width: 1300px) {
+        width: calc(100% - 24px);
+      }
+      @media screen and (min-width: 1301px) {
+        width: calc(40% - 24px);
+      }
+
+      &.unavailable {
+        opacity: 0.5;
+        filter: grayscale(100%);
+
+        .gradient-backdrop {
+          &:hover {
+            border: solid $white-two 4px;
+            padding: 0 !important;
+
+            h1.vehicle-model, .price-breakdown {
+              color: $brownish-grey;
+            }
+          }
+
+          .vehicle-summary {
+            color: $brownish-grey;
+
+            h1.vehicle-model, .price-breakdown {
+              color: $brownish-grey;
+            }
+
+            button {
+              background: inherit;
+              color: inherit;
+              border: 2px solid $brownish-grey;
+              cursor: default;
+            }
+
+            @media(max-width: $mobileBreakpoint) {
+              background: $white;
+              opacity: .8;
+            }
+          }
+        }
+      }
+
+      @media(max-width: $mobileBreakpoint) {
+        margin: 12px 0;
+      }
+    }
+
+    @media(max-width: $mobileBreakpoint) {
+      width: 100vw;
+      margin-left: -50vw;
+      left: 50%;
+    }
+  }
+}

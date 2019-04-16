@@ -1,0 +1,30 @@
+.cookie-statement {
+    h1 {
+        text-align: center;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    table {
+        border-collapse: collapse;
+        border: 1px solid black;
+        table-layout: fixed;
+        width: 100%;   
+        th {
+            border: 1px solid black;
+            padding: 15px;
+        }
+        td {
+            border: 1px solid black;
+            padding: 12px;
+        }
+        thead tr th:first-child,
+        tbody tr td:first-child {
+            width: 20em;
+            min-width: 20em;
+            max-width: 20em;
+            word-break: break-all;
+            text-align: center;
+        }
+    }
+}
+    

@@ -1,0 +1,33 @@
+@import '../../assets/scss/variables';
+
+.scheduled-maintenance {
+  @media screen and (min-width: 1024px) {
+    padding: 36px 130px 16px 130px;
+  }
+  @media(max-width: $mobileBreakpoint) {
+    width: 85% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 40px !important;
+  }
+  .header-info {
+    h2 {
+      color: $black;
+    }
+  }
+
+  .sm-contact {
+    a {
+      color: $lightblue !important;
+    }
+  }
+  .button {
+    @media(max-width: $mobileBreakpoint) {
+      width: 85% !important;
+      text-align: center;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      margin-bottom: 100px;
+    }
+  }
+}

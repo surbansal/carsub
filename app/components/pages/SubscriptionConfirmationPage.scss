@@ -1,0 +1,44 @@
+@import "../../assets/scss/variables";
+$primary: #212121;
+$secondary: #949494;
+
+.messaging-page {
+  .header-info {
+    margin-bottom: 35px;
+    h3 {
+      @media screen and (max-width: $mobileBreakpoint + 1px) {
+        max-width: 80%;
+      }
+    }
+    .account-setup-btn {
+      text-align: center;
+      button.csa-button {
+        @media screen and (max-width: $mobileBreakpoint + 1px) {
+          width: 350px;
+        }
+      }
+    }
+  }
+  .messaging-content {
+    width: 100vw;
+    margin-left: -50vw;
+    position: relative;
+    left: 50%;
+  }
+  .messaging-email {
+    margin-top: 20px;
+    text-align: center;
+    a {
+      text-decoration: underline;
+      color: $lightskyblue;
+
+      @media screen and (max-width: $mobileBreakpoint) {
+        font-size: 18px;
+      }
+    }
+    h3 {
+      margin-bottom: 3px;
+      margin-top: 30px;
+    }
+  }
+}

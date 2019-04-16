@@ -1,0 +1,64 @@
+@import "../../assets/scss/variables";
+
+.our-values {
+  position: relative;
+  margin-bottom: 60px;
+  margin-top: 40px;
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    display: block;
+  }
+
+  .our-values-details {
+    display: flex;
+    flex-flow: row wrap;
+    .our-values-categories {
+        margin: 2px;
+        width: 100%;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-flow: row wrap;
+        justify-content: space-around;
+
+      .category {
+        position: relative;
+        margin-bottom: 48px;
+
+        @media screen and (min-width: 1024px) {
+          width: 30%;
+        }
+    
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+          width: 80%;
+        }
+    
+        @media screen and (min-width: 0px) and (max-width: 767px) {
+          width: 80%;
+        }
+        display: inline-block;
+        .category-description {
+          width: 100%;
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+
+  .item {
+    display: inline-block;
+    flex-grow: 1;
+    max-width: 870px;
+    min-width: 615px;
+    @media screen and (max-width: 1500px) {
+      width: calc(100% - 24px);
+    }
+    @media screen and (min-width: 1501px) {
+      width: calc(50% - 24px);
+    }
+    margin: 12px;
+  }
+}

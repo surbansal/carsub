@@ -1,0 +1,113 @@
+@import '../../assets/scss/variables';
+.vehicle-detail-subscribe {
+  .subscribe-steps {
+
+    .subscribe-step-details {
+      .subscribe-step-inline {
+        display: flex;
+        flex-flow: row wrap;
+        @media screen and (max-width: $mobileBreakpoint) {
+          flex-flow: row nowrap;
+        }
+        .subscribe-step-expiration{
+          width: 50%;
+          margin-bottom: 24px;
+          margin-right: 4px;
+          .stripe-input {
+            @media screen and (max-width: $mobileBreakpoint) {
+              width:100%;
+            }
+            width:150px;
+          }
+
+        }
+        .subscribe-step-cvc {
+          @media screen and (max-width: $mobileBreakpoint) {
+            width: 50%;
+            @media screen and (max-width: 381px) {
+              label {
+                height: 59px;
+              }
+            }
+          }
+          margin-bottom: 7px;
+          .stripe-input {
+            width: 150px;
+            @media screen and (max-width: $mobileBreakpoint) {
+              width: 100%;
+            }
+          }
+        }
+      }
+      .payment-option-partition {
+        @media screen and (max-width: $mobileBreakpoint) {
+          display: block;
+          width: 100%;
+          margin-bottom: -30px !important;
+        }
+      }
+
+      .agree-to-terms-container {
+        clear: both;
+        float:left;
+        margin-bottom:10px;
+        hr {
+          color: $white;
+        }
+
+        label {
+          font-size: 11px;
+          padding: 5px 0 0 40px;
+        }
+      }
+      .appartment-field{
+        margin: 10px 0 10px 1px;
+      }
+    }
+  }
+
+  .card-icons {
+
+    &.selected {
+      img {
+        opacity: 0.5;
+        filter: grayscale(100%);
+      }
+
+      &.visa {
+        img.visa-card {
+          opacity: 1;
+          filter: none;
+        }
+      }
+
+      &.mastercard {
+        img.mastercard-card {
+          opacity: 1;
+          filter: none;
+        }
+      }
+
+      &.discover {
+        img.discover-card {
+          opacity: 1;
+          filter: none;
+        }
+      }
+
+      &.amex {
+        img.amex-card {
+          opacity: 1;
+          filter: none;
+        }
+      }
+    }
+    img {
+      @media screen and (max-width: $mobileBreakpoint) {
+        display: none;
+      }
+      width: 45px;
+      padding: 5px;
+    }
+  }
+}

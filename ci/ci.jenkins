@@ -1,0 +1,127 @@
+def OCTOPUS_PROJECT_PREFIX = 'CSAWeb'
+def OCTOPUS_PROJECT_ID = 'Projects-2'
+def OCTOPUS_PACKAGE_NAME = ''
+def OCTOPUS_PACKAGE_VERSION = ''
+def OCTOPUS_RELEASE_VERSION = ''
+def MAJOR_MINOR_REVISION_VERSION = '1.10.0'
+def GCP_PACKAGE_SDK_VERSION = '215.0.0'
+
+pipeline {
+  agent any
+  parameters {
+  		string(defaultValue: 'Environments-1', description: 'This maps to a GCP project: (Environments-4 = mwp-dave-arlin, Environments-3 = aaa-a3labs-carsubuat, Environments-1 = aaa-a3labs-carsubdev)', name: 'octopus_environment_id')
+  }
+  tools {
+    nodejs 'NodeJS 10.13.0'
+  }
+
+  stages {
+    stage('NPM CI') {
+      steps {
+        sh "npm ci"
+      }
+    }
+
+  stage('SonarQube analysis') {
+      steps {
+        withSonarQubeEnv('SonarQube') {
+          sh "npm run sonar-jenkins"
+        }
+      }
+    }
+
+    stage('NPM Run Production') {
+      steps {
+        sh "npm run production"
+      }
+    }
+
+    stage('Set up Staging Folder') {
+        steps {
+          sh "rm -rf stage"
+          sh "mkdir stage"
+          sh "cp -r dist/ stage/"
+          sh "cp app.yaml stage/"
+          sh "cp -r dispatch/ stage/"
+        }
+    }
+
+    stage('Package Deployment') {
+      steps {
+
+          script {
+              if (env.BRANCH_NAME == 'develop') {
+                OCTOPUS_PACKAGE_NAME = "${OCTOPUS_PROJECT_PREFIX}.${MAJOR_MINOR_REVISION_VERSION}.${env.BUILD_NUMBER}-SNAPSHOT.zip";
+                OCTOPUS_PACKAGE_VERSION ="${MAJOR_MINOR_REVISION_VERSION}.${env.BUILD_NUMBER}-SNAPSHOT";
+                OCTOPUS_RELEASE_VERSION = "${MAJOR_MINOR_REVISION_VERSION}.${env.BUILD_NUMBER}";
+              } else if (env.BRANCH_NAME.toLowerCase().contains('release/')) {
+                def packageExtension = "-rc.${env.BUILD_NUMBER}";
+                OCTOPUS_PACKAGE_NAME = "${OCTOPUS_PROJECT_PREFIX}.${MAJOR_MINOR_REVISION_VERSION}${packageExtension}.zip";
+                OCTOPUS_PACKAGE_VERSION = "${MAJOR_MINOR_REVISION_VERSION}${packageExtension}";
+                OCTOPUS_RELEASE_VERSION = "${MAJOR_MINOR_REVISION_VERSION}${packageExtension}";
+              } else {
+                def packageExtension = "-${env.BRANCH_NAME}";
+                packageExtension = packageExtension.replaceAll("[^a-zA-Z0-9-]", "");
+                packageExtension = "${packageExtension}.${env.BUILD_NUMBER}";
+                OCTOPUS_PACKAGE_NAME = "${OCTOPUS_PROJECT_PREFIX}.${MAJOR_MINOR_REVISION_VERSION}${packageExtension}.zip";
+                OCTOPUS_PACKAGE_VERSION = "${MAJOR_MINOR_REVISION_VERSION}${packageExtension}";
+                OCTOPUS_RELEASE_VERSION = "${MAJOR_MINOR_REVISION_VERSION}${packageExtension}";
+              }
+          }
+
+        echo "Package Name: ${OCTOPUS_PACKAGE_NAME}"
+        zip zipFile: "stage/${OCTOPUS_PACKAGE_NAME}", archive: false, dir: 'stage'
+      }
+    }
+
+    stage('Octopus - Send Package') {
+          steps {
+            dir('stage') {
+     				  sh "curl -X POST ${env.OctopusBaseUrl}/api/packages/raw -H \"${env.OctopusApiKeyHeader}\" -F \"data=@${OCTOPUS_PACKAGE_NAME}\""
+            }
+          }
+    }
+
+    stage ('Octopus - Create Release') {
+      steps {
+        dir('stage') {
+             script {
+                 def responseText = sh (returnStdout: true, script: "curl --fail -X POST ${env.OctopusBaseUrl}/api/releases -H \"${env.OctopusApiKeyHeader}\" -H \"Content-Type: application/json\" -d \"{ \\\"ProjectId\\\": \\\"${OCTOPUS_PROJECT_ID}\\\", \\\"SelectedPackages\\\": [ { \\\"StepName\\\": \\\"Token Replace and Deploy to GCP\\\", \\\"Version\\\": \\\"${OCTOPUS_PACKAGE_VERSION}\\\", \\\"ActionName\\\": \\\"Token Replace and Deploy to GCP\\\", \\\"PackageReferenceName\\\": \\\"${OCTOPUS_PROJECT_PREFIX}\\\" }, { \\\"StepName\\\": \\\"Token Replace and Deploy to GCP\\\", \\\"Version\\\": \\\"${GCP_PACKAGE_SDK_VERSION}\\\", \\\"ActionName\\\": \\\"Token Replace and Deploy to GCP\\\", \\\"PackageReferenceName\\\": \\\"GoogleCloudSDK\\\" } ], \\\"Version\\\": \\\"${OCTOPUS_RELEASE_VERSION}\\\" }\"").trim()
+                 def releaseInfo = readJSON text: responseText;
+
+                 if (env.BRANCH_NAME == 'develop') {
+                  sh (script: "curl --fail -X POST ${env.OctopusBaseUrl}/api/deployments -H \"${env.OctopusApiKeyHeader}\" -H \"Content-Type: application/json\" -d \"{ \\\"ProjectId\\\": \\\"${OCTOPUS_PROJECT_ID}\\\", \\\"EnvironmentId\\\": \\\"${params.octopus_environment_id}\\\", \\\"ReleaseId\\\": \\\"${releaseInfo.Id}\\\", \\\"UseGuidedFailure\\\": false }\"")
+                }
+             }
+
+        }
+      }
+    }
+
+    stage('Set Build Success'){
+     steps {
+       script {
+           currentBuild.result = 'SUCCESS'
+       }
+     }
+   }
+	}
+	post {
+     success {
+       echo 'Build succeeded'
+     }
+     failure {
+       echo 'Build failed'
+       slackSend "@here - Build Failed: `${env.JOB_NAME} [${env.BUILD_NUMBER}]`\n${env.BUILD_URL}\n```Last Commit: ${env.GIT_COMMIT} by ${env.GIT_COMMITTER_NAME}\nPrevious Successful Commit: ${env.GIT_PREVIOUS_SUCCESSFUL_COMMIT}```"
+     }
+     changed {
+       echo 'Build result changed'
+
+       script {
+           if(currentBuild.result == 'SUCCESS') {
+               slackSend "Build Fixed: `${env.JOB_NAME} [${env.BUILD_NUMBER}]` \n${env.BUILD_URL}"
+           }
+       }
+     }
+	}
+}

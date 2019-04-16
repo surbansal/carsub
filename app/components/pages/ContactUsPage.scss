@@ -1,0 +1,24 @@
+@import '../../assets/scss/variables';
+
+.contact-us {
+  @media(max-width: $mobileBreakpoint) {
+    text-align: center;
+    h1{
+      font-size: 29px;
+      margin-bottom: 0px;
+    }
+    p{
+      margin-bottom: 45px;
+      text-decoration: underline;
+      color: $darkskyblue;
+    }
+  }
+  .link-section-mobile{
+    margin-bottom: 65px;
+  }
+}
+.content-body.contact-us{
+  @media(max-width: $mobileBreakpoint) {
+    margin-top: 10px !important;
+  }
+}

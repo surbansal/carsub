@@ -1,0 +1,77 @@
+@import "../variables";
+
+label {
+  font-size: 17px;
+  letter-spacing: -0.3px;
+  color: $black;
+  display: block;
+  line-height: 1.76;
+
+  .sub-text {
+    display: block;
+    font-size: 14px;
+    line-height: 16px;
+    color: $textgrey;
+    margin: 5px 0px 20px 0px;
+    &.inline {
+      display:inline;
+    }
+  }
+}
+
+textarea {
+  color: $twilight-blue;
+  border: 1px solid lightgrey;
+  padding: 10px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: Smart;
+}
+
+input, .StripeElement {
+  color: $twilight-blue;
+  border: 1px solid lightgrey;
+  padding: 10px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  height: 45px;
+  font-size: 16px;
+  line-height: 1.5;
+
+  &:disabled {
+    color: $brownish-grey;
+  }
+
+  &.block {
+    width: 100%;
+  }
+
+  &.large {
+    height: 45px;
+    font-size: 15px;
+  }
+
+
+  &:active, &:focus, &--focus {
+    border: 1px solid $black;
+  }
+
+  ::placeholder {
+    color: lightgrey;
+    opacity: 0.5
+  }
+}
+
+select {
+  background: $purewhite;
+  height: 45px;
+  border: solid 1px $silver;
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 11px 22px;
+  &::-ms-expand {
+    display: none;
+  }
+}

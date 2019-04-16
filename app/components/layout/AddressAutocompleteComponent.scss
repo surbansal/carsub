@@ -1,0 +1,20 @@
+@import '../../assets/scss/variables';
+
+
+.places-autocomplete {
+  position: relative;
+  .autocomplete-dropdown-container {
+    position: absolute;
+    z-index: 100;
+    top: 55px;
+    width: 100%;
+    background: $purewhite;
+    box-shadow: 1px 1px 1px $black;
+
+    .suggestion-item {
+      font-size: 16px;
+      padding: 11px 22px;
+      color: $brownish-grey;
+    }
+  }
+}
