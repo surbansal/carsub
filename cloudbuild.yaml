@@ -8,8 +8,8 @@ steps:
   args:
   - '-c'
   - |
-    npm ci -q
-    npm run production -q
+    npm ci --silent
+    npm -q run production --silent
     rm -rf stage
     mkdir stage
     cp -r dist/ stage/
