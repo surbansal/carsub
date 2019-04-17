@@ -1,0 +1,46 @@
+steps:
+
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['install'] 
+
+- name: 'gcr.io/cloud-builders/npm'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    npm ci
+    npm run production
+    rm -rf stage
+    mkdir stage
+    cp -r dist/ stage/
+    cp app.yaml stage/
+    cp -r dispatch/ stage/
+
+    file="./csa-web-variables.properties"
+    while IFS='=' read -r key value
+    do
+        key=$(echo $key | tr '.' '_')
+        eval ${key}=\${value}
+    done < "$file"
+    
+    sed -i "s/#{AppengineServiceName}/${DEV_AppengineServiceName}/g" app.yaml
+    cd dist
+    sed -i "s|#{baseUrl}|${DEV_baseUrl}|g" robots.txt sitemap.xml
+    sed -i "s|#{apiBackend}|${DEV_apiBackend}|g" admin.js main.js
+    sed -i "s|#{dmaBackend}|${DEV_dmaBackend}|g" admin.js main.js
+    sed -i "s@#{segmentScriptTag}@${DEV_segmentScriptTag}@g" index.html admin/index.html
+    sed -i "s@#{crazyEggScriptTag}@${DEV_crazyEggScriptTag}@g" index.html admin/index.html
+    sed -i "s@#{hubspotScriptTag}@${DEV_hubspotScriptTag}@g" index.html admin/index.html
+    sed -i "s@#{optimizelyScriptTag}@${DEV_optimizelyScriptTag}@g" index.html admin/index.html
+
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    gsutil cp gs://mwp-alm-cloudbuild/keys/aaa-devops-infra-test-70716c4c40ab.json .
+    gcloud auth activate-service-account aaa-devops-deployment@$PROJECT_ID.iam.gserviceaccount.com --key-file=aaa-devops-infra-test-70716c4c40ab.json --project=$PROJECT_ID
+    cd stage
+    gcloud app create --region us-central
+    #echo "creation done111111111111111111111111111111111111111"
+    gcloud app deploy app.yaml
